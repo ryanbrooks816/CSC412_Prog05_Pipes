@@ -1,0 +1,1 @@
+73 730         head[14] = (char) (info->height & 0x0FF) ;

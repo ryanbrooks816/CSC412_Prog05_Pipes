@@ -1,0 +1,1 @@
+7 280  *  @param  image           the image to crop

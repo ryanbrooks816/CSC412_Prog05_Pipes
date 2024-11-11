@@ -1,0 +1,1 @@
+26 525 ImageStruct rotateImage270(ImageStruct* image)

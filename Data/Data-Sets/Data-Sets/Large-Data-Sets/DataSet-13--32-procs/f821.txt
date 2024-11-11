@@ -1,0 +1,1 @@
+21 839     if (sscanf(argv[4], "%u", cropCornerY) != 1)

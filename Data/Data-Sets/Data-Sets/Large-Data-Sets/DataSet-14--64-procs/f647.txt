@@ -1,0 +1,1 @@
+34 698     // open TARGA output file 

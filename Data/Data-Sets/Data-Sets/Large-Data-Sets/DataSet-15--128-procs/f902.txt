@@ -1,0 +1,1 @@
+80 800         wordSizeRowPadding!=8 && wordSizeRowPadding!=16 &&

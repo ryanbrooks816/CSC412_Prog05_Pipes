@@ -1,0 +1,1 @@
+14 288 ImageStruct cropImage(ImageStruct *image,

@@ -1,0 +1,1 @@
+24 944                     char cRed, cGreen, cBlue;

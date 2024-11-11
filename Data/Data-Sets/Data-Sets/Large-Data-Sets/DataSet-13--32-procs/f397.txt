@@ -1,0 +1,1 @@
+6 243  *  @param  rotVal  pointer to a RotationVal enum variable

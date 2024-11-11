@@ -1,0 +1,1 @@
+3 576 ImageStruct readTGA(char* filePath)

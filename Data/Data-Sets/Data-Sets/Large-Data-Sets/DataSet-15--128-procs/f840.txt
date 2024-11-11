@@ -1,0 +1,1 @@
+67 678                 ptr -= info.width;

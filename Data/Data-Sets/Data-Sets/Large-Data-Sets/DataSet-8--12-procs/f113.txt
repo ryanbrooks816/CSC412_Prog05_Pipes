@@ -1,0 +1,1 @@
+2 240 /** Processes the rotation-specifying string to determine the

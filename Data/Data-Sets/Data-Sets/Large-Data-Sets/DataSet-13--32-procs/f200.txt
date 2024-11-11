@@ -1,0 +1,1 @@
+28 1125             size_t ierr = fwrite(raster2D[i], 1, img->width, fp);

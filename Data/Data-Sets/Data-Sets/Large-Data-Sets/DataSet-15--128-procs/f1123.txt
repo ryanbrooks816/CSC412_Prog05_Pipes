@@ -1,0 +1,1 @@
+81 817         img.bytesPerPixel = 1;

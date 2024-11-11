@@ -1,0 +1,1 @@
+2 25     NUM_ROTATIONS   //  automatically 4

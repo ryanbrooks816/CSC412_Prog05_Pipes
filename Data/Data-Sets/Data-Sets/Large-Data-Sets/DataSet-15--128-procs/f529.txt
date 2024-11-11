@@ -1,0 +1,1 @@
+78 789 //  Should be moved to some Image.c file

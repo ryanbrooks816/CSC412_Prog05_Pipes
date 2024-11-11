@@ -1,0 +1,1 @@
+2 407 ImageIOErrorCode determineRotation(char* rotStr, RotationVal* rotVal)

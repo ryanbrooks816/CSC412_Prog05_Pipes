@@ -1,0 +1,1 @@
+44 448         printf("%s\n", ERROR_STR[code]);

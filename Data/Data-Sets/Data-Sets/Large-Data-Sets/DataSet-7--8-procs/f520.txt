@@ -1,0 +1,1 @@
+5 799     if (wordSizeRowPadding!=1 && wordSizeRowPadding!=4 &&

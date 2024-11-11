@@ -1,0 +1,1 @@
+7 143         FLOAT_RASTER

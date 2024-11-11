@@ -1,0 +1,1 @@
+3 355     //      C++:    ImageClas* newImage;    //  pointer to ImageClass object

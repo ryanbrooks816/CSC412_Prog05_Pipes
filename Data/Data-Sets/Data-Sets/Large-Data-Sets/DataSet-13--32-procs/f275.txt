@@ -1,0 +1,1 @@
+17 701     if (tga_out == NULL)

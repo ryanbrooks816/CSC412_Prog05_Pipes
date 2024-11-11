@@ -1,0 +1,1 @@
+15 603         data = (unsigned char*) malloc(imgSize*4);

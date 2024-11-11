@@ -1,0 +1,1 @@
+7 829     img.raster = (void*) calloc(height*effectiveWidth, img.bytesPerPixel);

@@ -1,0 +1,1 @@
+6 691 //   This function write out an image of type TGA (24-bit color)

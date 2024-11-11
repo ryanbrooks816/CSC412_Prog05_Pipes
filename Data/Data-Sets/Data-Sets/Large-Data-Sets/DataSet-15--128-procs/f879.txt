@@ -1,0 +1,1 @@
+29 299  *  @param  image   pointer to the RGBA32_RASTER image to rotate

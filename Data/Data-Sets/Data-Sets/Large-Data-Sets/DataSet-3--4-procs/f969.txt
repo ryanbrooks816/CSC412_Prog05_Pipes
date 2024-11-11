@@ -1,0 +1,1 @@
+2 812         case RGBA32_RASTER:

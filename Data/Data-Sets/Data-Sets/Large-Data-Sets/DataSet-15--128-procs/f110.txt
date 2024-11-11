@@ -1,0 +1,1 @@
+24 246 ImageIOErrorCode determineRotation(char* rotStr, RotationVal* rotVal);

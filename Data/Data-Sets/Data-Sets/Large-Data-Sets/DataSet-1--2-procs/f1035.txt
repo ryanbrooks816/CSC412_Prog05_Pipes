@@ -1,0 +1,1 @@
+1 871                cropWidth*imageIn->bytesPerPixel);

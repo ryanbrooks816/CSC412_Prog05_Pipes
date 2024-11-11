@@ -1,0 +1,1 @@
+40 809     img.type = type;

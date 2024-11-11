@@ -1,0 +1,1 @@
+2 97     "Rotation specification must start with a dash",    //  NO_DASH_ON_ROT_STRING,

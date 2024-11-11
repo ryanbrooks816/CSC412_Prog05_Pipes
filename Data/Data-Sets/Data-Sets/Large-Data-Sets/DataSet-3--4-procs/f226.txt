@@ -1,0 +1,1 @@
+3 1159         return WRONG_FILE_TYPE;

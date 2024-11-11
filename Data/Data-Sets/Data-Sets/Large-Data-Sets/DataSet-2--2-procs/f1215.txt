@@ -1,0 +1,1 @@
+0 600         info.type = RGBA32_RASTER;

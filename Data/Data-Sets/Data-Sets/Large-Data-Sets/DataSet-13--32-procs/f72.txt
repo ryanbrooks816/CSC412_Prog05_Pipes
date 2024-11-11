@@ -1,0 +1,1 @@
+11 446         printf("%s: %s\n", ERROR_STR[code], input);

@@ -1,0 +1,1 @@
+62 629     //  Read the pixel data

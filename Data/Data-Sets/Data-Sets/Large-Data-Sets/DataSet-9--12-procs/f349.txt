@@ -1,0 +1,1 @@
+7 758         head[1]  = 0 ;                          // Color map type.

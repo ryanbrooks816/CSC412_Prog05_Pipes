@@ -1,0 +1,1 @@
+9 979             //  The image is stored in an ASCII format

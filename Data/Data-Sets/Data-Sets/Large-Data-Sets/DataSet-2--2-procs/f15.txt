@@ -1,0 +1,1 @@
+0 296 ImageStruct copyImage(ImageStruct* image);

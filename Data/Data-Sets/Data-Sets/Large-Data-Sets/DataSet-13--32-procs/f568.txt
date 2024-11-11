@@ -1,0 +1,1 @@
+25 1008         //  Up to 16 bits of gray levels

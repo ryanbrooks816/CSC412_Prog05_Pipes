@@ -1,0 +1,1 @@
+1 589     //  Read the header (TARGA file)

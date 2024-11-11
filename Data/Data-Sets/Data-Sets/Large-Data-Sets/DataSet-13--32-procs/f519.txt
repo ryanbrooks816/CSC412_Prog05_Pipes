@@ -1,0 +1,1 @@
+26 1016             image.bytesPerPixel = 2;

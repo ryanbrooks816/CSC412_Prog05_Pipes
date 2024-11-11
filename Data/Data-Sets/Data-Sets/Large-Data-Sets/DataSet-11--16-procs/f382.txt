@@ -1,0 +1,1 @@
+4 366             ImageStruct outImage = copyImage(&image);

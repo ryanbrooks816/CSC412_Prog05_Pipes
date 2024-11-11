@@ -1,0 +1,1 @@
+69 695 int writeTGA(char* filePath, ImageStruct* info)

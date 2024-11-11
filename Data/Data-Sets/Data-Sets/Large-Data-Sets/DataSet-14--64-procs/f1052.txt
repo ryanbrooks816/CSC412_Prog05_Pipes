@@ -1,0 +1,1 @@
+50 1011             //  Allocate the pixel array

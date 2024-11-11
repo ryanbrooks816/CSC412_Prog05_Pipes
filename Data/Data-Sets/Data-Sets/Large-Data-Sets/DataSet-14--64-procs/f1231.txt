@@ -1,0 +1,1 @@
+10 211 /** Writes an image file in the PPM/PGM (<tt>.ppm</tt> or <tt>.pgm</tt>) file format.

@@ -1,0 +1,1 @@
+19 772         unsigned char* data  = (unsigned char*) info->raster;

@@ -1,0 +1,1 @@
+8 169      *  word length (e.g. multiple of 16 or 32))

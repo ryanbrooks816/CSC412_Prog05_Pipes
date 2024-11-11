@@ -1,0 +1,1 @@
+123 1236     fscanf(inPPM, "%c", &c);

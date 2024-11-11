@@ -1,0 +1,1 @@
+21 210 ImageStruct readPPM_PGM(char* filePath);

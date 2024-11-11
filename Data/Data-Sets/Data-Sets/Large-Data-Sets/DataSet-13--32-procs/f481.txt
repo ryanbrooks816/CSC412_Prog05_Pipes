@@ -1,0 +1,1 @@
+5 199 //  Reads the header of a PPM/PGM file

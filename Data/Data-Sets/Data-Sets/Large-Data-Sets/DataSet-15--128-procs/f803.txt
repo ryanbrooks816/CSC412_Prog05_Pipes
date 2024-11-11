@@ -1,0 +1,1 @@
+95 954         image.type = RGBA32_RASTER;

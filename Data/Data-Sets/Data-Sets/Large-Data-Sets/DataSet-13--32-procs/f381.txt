@@ -1,0 +1,1 @@
+23 926                     int theRed, theGreen, theBlue;

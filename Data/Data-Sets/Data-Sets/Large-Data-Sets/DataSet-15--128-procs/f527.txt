@@ -1,0 +1,1 @@
+2 20     NO_ROTATION = 0,

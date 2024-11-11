@@ -1,0 +1,1 @@
+1 151     /** Type of image stored

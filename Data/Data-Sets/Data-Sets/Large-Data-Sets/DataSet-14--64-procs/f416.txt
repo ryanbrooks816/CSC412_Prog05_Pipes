@@ -1,0 +1,1 @@
+24 488             image->height * image->bytesPerRow);

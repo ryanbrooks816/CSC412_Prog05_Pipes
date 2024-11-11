@@ -1,0 +1,1 @@
+13 267 /** interprets the program's input argument to determine the crop region.

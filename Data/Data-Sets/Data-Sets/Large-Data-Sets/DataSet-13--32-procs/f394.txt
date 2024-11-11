@@ -1,0 +1,1 @@
+4 158     /** Number of rows (height) of the image

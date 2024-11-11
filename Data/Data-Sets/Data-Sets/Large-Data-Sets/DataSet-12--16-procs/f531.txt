@@ -1,0 +1,1 @@
+7 564         temp = theData[k*4+2];

@@ -1,0 +1,1 @@
+2 343     //  Produce the path to the output image

@@ -1,0 +1,1 @@
+13 1058             exit(WRONG_FILE_TYPE);

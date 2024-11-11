@@ -1,0 +1,1 @@
+61 610         data = (unsigned char*) malloc(imgSize);

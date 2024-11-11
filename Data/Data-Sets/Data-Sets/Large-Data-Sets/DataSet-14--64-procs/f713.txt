@@ -1,0 +1,1 @@
+35 716         // create the header (TARGA file)

@@ -1,0 +1,1 @@
+4 498     int* rasterOut = (int*)(outImage.raster);

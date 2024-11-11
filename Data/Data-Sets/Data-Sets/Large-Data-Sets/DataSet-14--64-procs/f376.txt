@@ -1,0 +1,1 @@
+12 249  *  write to a log and "swallow" some non-critical errors.

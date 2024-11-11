@@ -1,0 +1,1 @@
+1 251  *  @param code     the code of the error to report/process

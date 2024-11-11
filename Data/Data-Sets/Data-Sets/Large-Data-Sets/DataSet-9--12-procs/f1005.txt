@@ -1,0 +1,1 @@
+2 293  *  @param  image   pointer to the RGBA32_RASTER image to copy

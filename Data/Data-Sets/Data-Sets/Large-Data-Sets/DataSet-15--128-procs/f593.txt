@@ -1,0 +1,1 @@
+82 820         case FLOAT_RASTER:

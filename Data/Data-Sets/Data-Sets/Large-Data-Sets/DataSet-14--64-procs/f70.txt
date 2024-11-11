@@ -1,0 +1,1 @@
+13 265 char* produceOutFilePath(char* inputImagePath, char* outFolderPath,

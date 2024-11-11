@@ -1,0 +1,1 @@
+18 368             free(outImage.raster);

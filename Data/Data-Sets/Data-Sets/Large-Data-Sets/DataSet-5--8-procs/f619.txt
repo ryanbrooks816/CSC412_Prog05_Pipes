@@ -1,0 +1,1 @@
+3 607         info.type = GRAY_RASTER;

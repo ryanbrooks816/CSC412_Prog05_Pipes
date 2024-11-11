@@ -1,0 +1,1 @@
+2 465     strcpy(outFilePath, outFolderPath);

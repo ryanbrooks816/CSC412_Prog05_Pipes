@@ -1,0 +1,1 @@
+34 340     //  Read the image

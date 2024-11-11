@@ -1,0 +1,1 @@
+47 479     free(inputFileRootName);

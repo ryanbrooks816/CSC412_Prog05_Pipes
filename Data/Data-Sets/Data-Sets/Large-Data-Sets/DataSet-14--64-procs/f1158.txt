@@ -1,0 +1,1 @@
+50 1014             image.type = DEEP_GRAY_RASTER;

@@ -1,0 +1,1 @@
+10 217 /** returns a properly initialized ImageStruct (including the 1D raster).

@@ -1,0 +1,1 @@
+2 671         //  First check if the image is mirrored vertically (a bit setting in the header)

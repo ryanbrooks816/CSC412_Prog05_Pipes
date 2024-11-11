@@ -1,0 +1,1 @@
+9 973             image.bytesPerRow = nbCols;

@@ -1,0 +1,1 @@
+4 497     int* rasterIn = (int*)(image->raster);

@@ -1,0 +1,1 @@
+2 414     if (strlen(rotStr) < 2)

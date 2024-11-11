@@ -1,0 +1,1 @@
+8 916         float valScale = (maxVal != 255) ?  255.f/maxVal : 1.f;

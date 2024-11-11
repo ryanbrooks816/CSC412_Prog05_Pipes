@@ -1,0 +1,1 @@
+9 721         head[2]  = 2 ;                          // Image type: true color, uncompressed.

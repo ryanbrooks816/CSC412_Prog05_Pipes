@@ -1,0 +1,1 @@
+39 781         printf("Image type not supported for output\n");

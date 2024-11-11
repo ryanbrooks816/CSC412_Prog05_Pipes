@@ -1,0 +1,1 @@
+0 528     int* rasterIn = (int*)(image->raster);

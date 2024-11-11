@@ -1,0 +1,1 @@
+3 1182         exit(WRONG_FILE_TYPE);

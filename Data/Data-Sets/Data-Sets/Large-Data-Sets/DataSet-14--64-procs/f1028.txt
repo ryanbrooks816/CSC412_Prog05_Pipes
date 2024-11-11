@@ -1,0 +1,1 @@
+48 971             image.type = GRAY_RASTER;

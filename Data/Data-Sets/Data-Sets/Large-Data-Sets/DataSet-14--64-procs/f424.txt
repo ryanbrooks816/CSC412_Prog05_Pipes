@@ -1,0 +1,1 @@
+48 968             //  Allocate the pixel array

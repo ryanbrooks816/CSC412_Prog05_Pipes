@@ -1,0 +1,1 @@
+1 302 ImageStruct rotateImage90(ImageStruct* image);

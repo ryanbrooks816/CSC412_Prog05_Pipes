@@ -1,0 +1,1 @@
+12 469     //  Produce the name of the input file minus extension

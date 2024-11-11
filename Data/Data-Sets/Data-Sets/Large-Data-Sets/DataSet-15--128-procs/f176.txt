@@ -1,0 +1,1 @@
+70 707     //  are bad style when testing an integral value, but here only two values

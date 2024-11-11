@@ -1,0 +1,1 @@
+5 417     *rotVal = NO_ROTATION;

@@ -1,0 +1,1 @@
+60 602         info.bytesPerRow = 4*info.width;

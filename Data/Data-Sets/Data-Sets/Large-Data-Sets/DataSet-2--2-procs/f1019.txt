@@ -1,0 +1,1 @@
+1 862     ImageStruct imageOut = newImage(cropWidth, cropHeight, RGBA32_RASTER, 1);

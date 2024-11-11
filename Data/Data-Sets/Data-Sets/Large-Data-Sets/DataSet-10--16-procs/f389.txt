@@ -1,0 +1,1 @@
+11 899     FILE* inPPM = fopen(filePath, "r");

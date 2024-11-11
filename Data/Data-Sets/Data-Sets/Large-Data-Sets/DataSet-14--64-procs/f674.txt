@@ -1,0 +1,1 @@
+6 125 typedef enum ImageType

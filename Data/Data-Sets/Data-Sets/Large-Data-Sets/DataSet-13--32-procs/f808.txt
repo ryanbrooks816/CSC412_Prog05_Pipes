@@ -1,0 +1,1 @@
+15 601         info.bytesPerPixel = 4;

@@ -1,0 +1,1 @@
+4 713     if (info->type == RGBA32_RASTER)

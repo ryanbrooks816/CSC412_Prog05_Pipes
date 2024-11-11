@@ -1,0 +1,1 @@
+9 388         case ROTATE_270:

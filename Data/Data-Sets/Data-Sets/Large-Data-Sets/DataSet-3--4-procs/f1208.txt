@@ -1,0 +1,1 @@
+3 1064     //  Copy the information into the image struct

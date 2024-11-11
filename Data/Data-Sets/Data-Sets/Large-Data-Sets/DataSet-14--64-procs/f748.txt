@@ -1,0 +1,1 @@
+24 494 ImageStruct rotateImage90(ImageStruct* image)

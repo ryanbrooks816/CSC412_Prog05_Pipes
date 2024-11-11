@@ -1,0 +1,1 @@
+0 134         /** Gray image with 1 byte per pixel

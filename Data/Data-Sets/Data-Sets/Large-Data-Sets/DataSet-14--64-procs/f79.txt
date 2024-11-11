@@ -1,0 +1,1 @@
+1 31 char* ROT_SUFFIX[NUM_ROTATIONS] = {

@@ -1,0 +1,1 @@
+62 623         fclose(tga_in);

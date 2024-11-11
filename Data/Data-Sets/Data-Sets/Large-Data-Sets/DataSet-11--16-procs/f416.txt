@@ -1,0 +1,1 @@
+10 853         errorReport(INVALID_CROP_SIZE, NULL);

@@ -1,0 +1,1 @@
+13 1057             printf("Only gray levels up to 16 bits currently supported.\n");

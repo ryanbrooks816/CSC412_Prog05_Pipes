@@ -1,0 +1,1 @@
+2 258  *  then the output file path will be ../Output/clown [r].tga

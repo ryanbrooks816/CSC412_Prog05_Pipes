@@ -1,0 +1,1 @@
+6 711     //  Case of a color image

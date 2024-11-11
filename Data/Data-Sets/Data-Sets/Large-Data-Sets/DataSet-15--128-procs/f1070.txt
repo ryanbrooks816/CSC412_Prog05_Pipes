@@ -1,0 +1,1 @@
+74 749     //  Case of a gray-level image

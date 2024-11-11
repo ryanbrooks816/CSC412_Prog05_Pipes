@@ -1,0 +1,1 @@
+24 487             (char*) image->raster,

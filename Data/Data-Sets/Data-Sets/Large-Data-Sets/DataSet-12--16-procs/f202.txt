@@ -1,0 +1,1 @@
+3 255 /** Produces a complete path to the output image file.

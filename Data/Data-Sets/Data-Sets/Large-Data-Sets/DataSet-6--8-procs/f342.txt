@@ -1,0 +1,1 @@
+1 254 void errorReport(ImageIOErrorCode code, char* input);

@@ -1,0 +1,1 @@
+28 563     for(int k=0; k<imgSize; k++){

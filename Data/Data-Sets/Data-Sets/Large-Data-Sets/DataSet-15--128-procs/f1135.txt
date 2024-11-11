@@ -1,0 +1,1 @@
+82 828     unsigned int effectiveWidth = img.bytesPerRow / img.bytesPerPixel;  

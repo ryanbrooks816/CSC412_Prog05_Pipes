@@ -1,0 +1,1 @@
+1 39 typedef enum ImageIOErrorCode

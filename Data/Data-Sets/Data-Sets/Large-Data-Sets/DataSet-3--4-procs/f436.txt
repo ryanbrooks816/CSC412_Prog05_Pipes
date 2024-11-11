@@ -1,0 +1,1 @@
+2 674             unsigned char* ptr = data + imgSize - info.width;
