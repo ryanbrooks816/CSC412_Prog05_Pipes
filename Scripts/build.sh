@@ -1,0 +1,1 @@
+g++ -Wall -std=c++20 ./Programs/*.cpp -o ./Scripts/version1
