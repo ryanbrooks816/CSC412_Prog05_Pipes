@@ -24,4 +24,4 @@ for file in "$data_folder"/*; do
 done
 
 # Launch the server process
-./Executables/version1 $highest_process_idx $data_folder $output_file
+./Executables/version2 $highest_process_idx $data_folder $output_file

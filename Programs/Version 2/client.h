@@ -35,6 +35,34 @@ public:
     void setClientIdx(int clientIdx);
 
     /**
+     * Gets the starting index of the subset of data files to be processed by the client.
+     *
+     * @return The starting index.
+     */
+    int getFilesStartIdx() const;
+
+    /**
+     * Sets the starting index of the subset of data files to be processed by the client.
+     *
+     * @param startIdx The new starting index.
+     */
+    void setFilesStartIdx(int startIdx);
+
+    /**
+     * Gets the ending index of the subset of data files to be processed by the client.
+     *
+     * @return The ending index.
+     */
+    int getFilesEndIdx() const;
+
+    /**
+     * Sets the ending index of the subset of data files to be processed by the client.
+     *
+     * @param endIdx The new ending index.
+     */
+    void setFilesEndIdx(int endIdx);
+
+    /**
      * Adds a file to the list of files.
      *
      * @param file The file to add to the list.
@@ -51,7 +79,7 @@ public:
     /**
      * Updates the list of files.
      *
-     * @param files The new list of (verified) files.
+     * @param files The new list of verified files.
      */
     void setFiles(const std::vector<std::string> &files);
 
@@ -66,6 +94,20 @@ public:
      * @return The process index read from the file, or -1 if an error occurs.
      */
     int getDataFileProcessIdx(const std::string &filename);
+
+    /**
+     * @brief Verifies the distribution of data files among clients and writes the
+     * verified files to the client's temporary file.
+     *
+     * This function goes through the specified subset of files and verifies that each file
+     * belongs to the correct client by reading the process index from the file and
+     * writing the correct client index and file index to a temporary file. The server
+     * will later read these temporary files to update all clients with the correct files.
+     *
+     * @param numClients The number of clients.
+     * @param files A vector of strings containing the file names to be verified and distributed.
+     */
+    void verifyDataFilesDistribution(int numClients, const std::vector<std::string> &files);
 
     /**
      * @struct LineData
@@ -96,15 +138,15 @@ public:
     LineData getDataFileContents(const std::string &filename);
 
     /**
-     * @brief Processes data files associated with the client and concatenates their
-     * contents into a single code block.
+     * @brief Processes data files associated with the client and writes the results to a
+     * temporary file.
      *
      * This function iterates over the list of files associated with the client, reads
      * their contents, and stores them in a vector. Each file's contents are represented
      * as a LineData object, which includes the line number and the code.
      * The lines are then sorted based on their line numbers to ensure the correct order.
-     * Finally, the sorted lines are concatenated into a single string representing the
-     * complete code block.
+     * Finally, the sorted lines are written in order to a temporary file to be read by the
+     * server process.
      *
      * Invariant: The input data files properly have the lines associated with the client
      * that puts them in the correct order.
@@ -112,7 +154,7 @@ public:
      * @return A string containing the concatenated contents of all the data files,
      * ordered by line number.
      */
-    std::string processDataFiles();
+    void processDataFiles();
 
 private:
     /**
@@ -121,9 +163,19 @@ private:
     int clientIdx;
 
     /**
-     * A vector of strings representing the file paths associated with the client.
+     * The starting index of the subset of data files to be processed by the client.
      */
-    std::vector<std::string> files;
+    int filesStartIdx;
+
+    /**
+     * The ending index of the subset of data files to be processed by the client.
+     */
+    int filesEndIdx;
+
+    /**
+     * A vector of strings containing the file paths verified to belong to the client.
+     */
+    std::vector<std::string> verifiedFiles;
 };
 
 #endif // CLIENT_H

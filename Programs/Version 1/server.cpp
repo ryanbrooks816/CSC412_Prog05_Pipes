@@ -3,10 +3,10 @@
 
 /**
  * @brief Constructs a new Server object.
- * 
- * This constructor initializes a Server object and creates the specified number of 
+ *
+ * This constructor initializes a Server object and creates the specified number of
  * client objects.
- * 
+ *
  * @param numClients The number of clients to be managed by the server.
  */
 Server::Server(int numClients)
@@ -53,14 +53,18 @@ void Server::distributeDataFiles(std::string dataFolder)
         clientIdx = (clientIdx + 1) % numClients;
     }
 
-    for (const auto &client : clients)
-    {
-        std::cout << "Client " << client.getClientIdx() << " got " << client.getFiles().size() << " files." << std::endl;
-    }
-
     DEBUG_FILE("Distributed data files to clients.", "debug.log");
 }
 
+/**
+ * @brief Retrieves all regular files from the specified folder.
+ *
+ * This function iterates through the directory specified by the folderPath
+ * and collects the paths of all regular files into a vector of strings.
+ *
+ * @param folderPath The path to the folder from which to retrieve file paths.
+ * @return std::vector<std::string> A vector containing the paths of all regular files in the specified folder.
+ */
 std::vector<std::string> Server::getAllDataFiles(const std::string &folderPath)
 {
     std::vector<std::string> files;
@@ -83,8 +87,8 @@ std::vector<std::string> Server::getAllDataFiles(const std::string &folderPath)
  * the correct data files. If it finds a data file that doesn't belong to the client,
  * it will send the data to the correct client by adding the file to the appropriate
  * client's list.
- * 
- * Invariants: The script launching the server process has correctly retrieved the 
+ *
+ * Invariants: The script launching the server process has correctly retrieved the
  * highest process index to properly distribute the data files. Otherwise, when veryfing
  * the distribution, it will try to access an index that does not exist.
  */

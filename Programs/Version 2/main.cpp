@@ -45,7 +45,10 @@ int main(int argc, char *argv[])
 
     // Launch the server process
     Server server(numClients);
-    server.distributeDataFiles(dataFolder);
+
+    // Get all the data files from the specified folder and distribute them among the clients
+    std::vector<std::string> dataFiles = server.getAllDataFiles(dataFolder);
+    server.distributeDataFiles(dataFiles);
 
     // We then need to verify that the data files have been distributed correctly
     // meaning that each distributor process has received the data files that belong
@@ -53,7 +56,7 @@ int main(int argc, char *argv[])
     // it will be sent to the correct distributor process.
 
     // Verify the distribution of data files
-    server.verifyDataFilesDistribution();
+    server.verifyDataFilesDistribution(dataFiles);
 
     // Then we need to process the data files. Each distributor process will read the
     // data files it has received and sort the lines back into the correct order.
@@ -61,10 +64,10 @@ int main(int argc, char *argv[])
     // The server then combines each block of code back into the original program.
 
     // Perform the data processing
-    std::string codeBlocks = server.processDataFiles();
+    std::string reconstructedCode = server.processDataFiles();
 
     // Lastly, the server outputs the reconstructed program to a file.
-    server.writeOutputFile(outputFile, codeBlocks);
+    server.writeOutputFile(outputFile, reconstructedCode);
 
     return 0;
 }

@@ -10,7 +10,6 @@
 Client::Client(int clientIdx)
 {
     this->clientIdx = clientIdx;
-    this->files = std::vector<std::string>();
     DEBUG_FILE("Client id " + std::to_string(clientIdx) + " created.", "debug.log");
 }
 
@@ -35,13 +34,53 @@ void Client::setClientIdx(int clientIdx)
 }
 
 /**
+ * Gets the starting index of the subset of data files to be processed by the client.
+ *
+ * @return The starting index.
+ */
+int Client::getFilesStartIdx() const
+{
+    return filesStartIdx;
+}
+
+/**
+ * @brief Sets the starting index of the subset of data files to be processed by the client.
+ *
+ * @param startIdx The new starting index.
+ */
+void Client::setFilesStartIdx(int startIdx)
+{
+    this->filesStartIdx = startIdx;
+}
+
+/**
+ * @brief Gets the ending index of the subset of data files to be processed by the client.
+ *
+ * @return The ending index.
+ */
+int Client::getFilesEndIdx() const
+{
+    return filesEndIdx;
+}
+
+/**
+ * @brief Sets the ending index of the subset of data files to be processed by the client.
+ *
+ * @param endIdx The new ending index.
+ */
+void Client::setFilesEndIdx(int endIdx)
+{
+    this->filesEndIdx = endIdx;
+}
+
+/**
  * Adds a file to the list of files.
  *
  * @param file The file to add to the list.
  */
 void Client::addFile(const std::string &file)
 {
-    this->files.push_back(file);
+    this->verifiedFiles.push_back(file);
 }
 
 /**
@@ -51,17 +90,17 @@ void Client::addFile(const std::string &file)
  */
 std::vector<std::string> Client::getFiles() const
 {
-    return files;
+    return verifiedFiles;
 }
 
 /**
  * Updates the list of files.
  *
- * @param files The new list of (verified) files.
+ * @param files The new list of verified files.
  */
 void Client::setFiles(const std::vector<std::string> &files)
 {
-    this->files = files;
+    this->verifiedFiles = files;
 }
 
 /**
@@ -93,6 +132,48 @@ int Client::getDataFileProcessIdx(const std::string &filename)
     }
 
     return processIdx;
+}
+
+/**
+ * @brief Verifies the distribution of data files among clients and writes the
+ * verified files to the client's temporary file.
+ *
+ * This function goes through the specified subset of files and verifies that each file
+ * belongs to the correct client by reading the process index from the file and
+ * writing the correct client index and file index to a temporary file. The server
+ * will later read these temporary files to update all clients with the correct files.
+ *
+ * @param numClients The number of clients.
+ * @param files A vector of strings containing the file names to be verified and distributed.
+ */
+void Client::verifyDataFilesDistribution(int numClients, const std::vector<std::string> &files)
+{
+    std::string debugChFile = "debug_ch_" + std::to_string(this->clientIdx) + ".log";
+    DEBUG_FILE("Verifying data files for client " + std::to_string(this->clientIdx), debugChFile);
+
+    // Write to a temporary file for the client a list of files' correct client index
+    // they belong to and their index in files
+    std::ofstream tempFile("tmp/ch_" + std::to_string(this->clientIdx) + ".txt");
+
+    // Go through the specified subset of files and add them to the appropriate client's list
+    for (int i = this->filesStartIdx; i < this->filesEndIdx; i++)
+    {
+        const std::string &file = files[i];
+
+        std::string message = "Verifying: " + file;
+        DEBUG_FILE(message, debugChFile);
+
+        // Read the process index for the file to determine which client it belongs to
+        int processIdx = this->getDataFileProcessIdx(file);
+
+        std::string message2 = "Processing file: " + file + " for client process " + std::to_string(processIdx);
+        DEBUG_FILE(message2, debugChFile);
+
+        // Write the correct client index and the file index to the temporary file
+        tempFile << processIdx << " " << i << std::endl;
+    }
+
+    tempFile.close();
 }
 
 /**
@@ -134,7 +215,7 @@ Client::LineData Client::getDataFileContents(const std::string &filename)
             }
             // Get the rest of the line as the code, including leading whitespace
             std::getline(iss, code);
-            
+
             allValues.processIdx = processIdx;
             allValues.lineNum = lineNum;
             allValues.code = code;
@@ -145,33 +226,35 @@ Client::LineData Client::getDataFileContents(const std::string &filename)
 }
 
 /**
- * @brief Processes data files associated with the client and concatenates their
- * contents into a single code block.
+ * @brief Processes data files associated with the client and writes the results to a 
+ * temporary file.
  *
  * This function iterates over the list of files associated with the client, reads
  * their contents, and stores them in a vector. Each file's contents are represented
  * as a LineData object, which includes the line number and the code.
  * The lines are then sorted based on their line numbers to ensure the correct order.
- * Finally, the sorted lines are concatenated into a single string representing the
- * complete code block.
- * 
+ * Finally, the sorted lines are written in order to a temporary file to be read by the
+ * server process.
+ *
  * Invariant: The input data files properly have the lines associated with the client
  * that puts them in the correct order.
  *
  * @return A string containing the concatenated contents of all the data files,
  * ordered by line number.
  */
-std::string Client::processDataFiles()
+void Client::processDataFiles()
 {
-    // Create a vector to store all the lines
-    std::vector<LineData> lines = std::vector<LineData>(this->files.size());
+    std::string debugChFile = "debug_sch_" + std::to_string(this->clientIdx) + ".log";
 
-    for (size_t i = 0; i < this->files.size(); i++)
+    // Create a vector to store all the lines
+    std::vector<LineData> lines = std::vector<LineData>(this->verifiedFiles.size());
+
+    for (size_t i = 0; i < this->verifiedFiles.size(); i++)
     {
-        std::string file = this->files[i];
+        std::string file = this->verifiedFiles[i];
 
         std::string message = "Processing data file " + file + " for client " + std::to_string(this->clientIdx);
-        DEBUG_FILE(message, "debug.log");
+        DEBUG_FILE(message, debugChFile);
 
         // Get the line data and put them in order based on the line number
         LineData lineData = this->getDataFileContents(file);
@@ -182,12 +265,13 @@ std::string Client::processDataFiles()
     std::sort(lines.begin(), lines.end(), [](const LineData &a, const LineData &b)
               { return a.lineNum < b.lineNum; });
 
-    // Concatenate all the lines to form the final code block
-    std::string codeBlock;
+    // Write the code block to a temporary file
+    std::ofstream tempFile("tmp/sch_" + std::to_string(this->clientIdx) + ".txt");
+
     for (const LineData &line : lines)
     {
-        codeBlock += line.code + "\n";
+        tempFile << line.code << std::endl;
     }
 
-    return codeBlock;
+    tempFile.close();
 }

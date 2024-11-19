@@ -70,6 +70,15 @@ private:
     std::vector<Client> clients;
     int numClients;
 
+    /**
+     * @brief Retrieves all regular files from the specified folder.
+     *
+     * This function iterates through the directory specified by the folderPath
+     * and collects the paths of all regular files into a vector of strings.
+     *
+     * @param folderPath The path to the folder from which to retrieve file paths.
+     * @return std::vector<std::string> A vector containing the paths of all regular files in the specified folder.
+     */
     std::vector<std::string> getAllDataFiles(const std::string &folderPath);
 };
 
