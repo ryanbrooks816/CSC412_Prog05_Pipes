@@ -1,1 +1,0 @@
-g++ -Wall -std=c++20 -DDEBUG ./Programs/*.cpp -o ./Scripts/version1
