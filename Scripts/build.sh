@@ -17,9 +17,9 @@ g++ -Wall -std=c++20 $debug_flag ./Programs/Version\ 1/*.cpp -o ./Executables/Ve
 g++ -Wall -std=c++20 $debug_flag ./Programs/Version\ 2/*.cpp -o ./Executables/Version\ 2/version2
 
 g++ -Wall -std=c++20 $debug_flag "${path3}main.cpp" "${path3}server.cpp" "${path3}client.cpp" "${path3}testing.cpp" -o ./Executables/Version\ 3/version3
-g++ -Wall -std=c++20 $debug_flag "${path3}distributeData.cpp" "${path3}client.cpp" "${path3}testing.cpp" -o ./Executables/Version\ 3/distributeData
-g++ -Wall -std=c++20 $debug_flag "${path3}processData.cpp" "${path3}client.cpp" "${path3}testing.cpp" -o ./Executables/Version\ 3/processData
+g++ -Wall -std=c++20 $debug_flag "${path3}distributor.cpp" "${path3}client.cpp" "${path3}testing.cpp" -o ./Executables/Version\ 3/distributor
+g++ -Wall -std=c++20 $debug_flag "${path3}processor.cpp" "${path3}client.cpp" "${path3}testing.cpp" -o ./Executables/Version\ 3/processor
 
 g++ -Wall -std=c++20 $debug_flag "${path4}main.cpp" "${path4}server.cpp" "${path4}client.cpp" "${path4}testing.cpp" -o ./Executables/Version\ 4/version4
-g++ -Wall -std=c++20 $debug_flag "${path4}distributeData.cpp" "${path4}client.cpp" "${path4}testing.cpp" -o ./Executables/Version\ 4/distributeData
-g++ -Wall -std=c++20 $debug_flag "${path4}processData.cpp" "${path4}client.cpp" "${path4}testing.cpp" -o ./Executables/Version\ 4/processData
+g++ -Wall -std=c++20 $debug_flag "${path4}distributor.cpp" "${path4}client.cpp" "${path4}testing.cpp" -o ./Executables/Version\ 4/distributor
+g++ -Wall -std=c++20 $debug_flag "${path4}processor.cpp" "${path4}client.cpp" "${path4}testing.cpp" -o ./Executables/Version\ 4/processor

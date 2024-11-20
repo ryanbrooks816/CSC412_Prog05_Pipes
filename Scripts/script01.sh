@@ -23,7 +23,7 @@ for file in "$data_folder"/*; do
     fi
 done
 
-echo "Launching server process with $highest_process_idx processes"
+echo "Launching server process with $((highest_process_idx + 1)) processes"
 
 # Launch the server process
 ./Executables/Version\ 1/version1 $highest_process_idx $data_folder $output_file

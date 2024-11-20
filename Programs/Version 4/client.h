@@ -8,6 +8,10 @@
 #include <string>
 #include <numeric>
 #include <algorithm>
+#include <unistd.h>
+#include <sys/wait.h>
+
+extern std::string EXECUTABLES_PATH;
 
 class Client
 {
@@ -104,18 +108,6 @@ public:
     void setFiles(std::vector<std::string> files);
 
     /**
-     * @brief Retrieves the process index from the first line of a given file.
-     *
-     * Opens the specified file and reads the first line to extract
-     * an integer value representing the process index. If the file cannot be opened
-     * or the first line does not contain a valid integer, the function returns -1.
-     *
-     * @param filename The path to the file containing the process index.
-     * @return The process index read from the file, or -1 if an error occurs.
-     */
-    int getDataFileProcessIdx(const std::string &filename);
-
-    /**
      * @brief Verifies the distribution of data files among clients and writes the
      * verified files to the client's temporary file.
      *
@@ -132,6 +124,57 @@ public:
      * and distributed by the current client.
      */
     void verifyDataFilesDistribution(int numClients, const std::vector<std::string> &files);
+
+    /**
+     * @brief Reads temporary files created by all child processes during the data distribution
+     * process and updates the current cilent's verified files list.
+     *
+     * This function iterates over the number of clients and attempts to open a corresponding
+     * temporary file for each client. Expects the temporary files to be named and formatted
+     * in a specific way. Then it updates the client's verified file lists with the files
+     * that match the client's index.
+     *
+     * @param numClients The number of clients.
+     *
+     * @throws std::runtime_error if a temporary file cannot be opened.
+     */
+    void readDistributorTempFiles(int numClients);
+
+    /**
+     * @brief Initializes the processor process to sort and combine the data files
+     * contents into a single block of code.
+     *
+     * This function forks a child process and launches the processor program.
+     * The arguments passed to the "processor" executable include:
+     * - The path to the "processor" executable.
+     * - The client index.
+     * - The number of verified files.
+     * - The list of verified files.
+     *
+     * Invariant: Tmporary files have been created and processed into the client's verified
+     * files list by the runDistributorChildProcess function.
+     *
+     * Invaiant: The tmp folder exists, which we know it does because the distributor
+     * process creates it before running the child processes.
+     *
+     * @return A string containing the combined results from processing each client's
+     * data files.
+     *
+     * @throws std::runtime_error if the fork fails or execvp fails.
+     */
+    void initializeProcessor();
+
+    /**
+     * @brief Retrieves the process index from the first line of a given file.
+     *
+     * Opens the specified file and reads the first line to extract
+     * an integer value representing the process index. If the file cannot be opened
+     * or the first line does not contain a valid integer, the function returns -1.
+     *
+     * @param filename The path to the file containing the process index.
+     * @return The process index read from the file, or -1 if an error occurs.
+     */
+    int getDataFileProcessIdx(const std::string &filename);
 
     /**
      * @struct LineData

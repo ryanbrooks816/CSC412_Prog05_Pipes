@@ -1,6 +1,8 @@
 #include "client.h"
 #include "testing.h"
 
+std::string EXECUTABLES_PATH = "./Executables/Version 4/";
+
 /**
  * Constructs a client that represents a "distributor" process, whose job is to
  * process a subset of the data files associated with the distributor process.
@@ -114,7 +116,7 @@ std::vector<std::string> Client::getFiles() const
  *
  * @param index The index of the file to retrieve.
  * @return The file at the specified index.
- * 
+ *
  * @throws std::out_of_range if the index is out of bounds.
  */
 std::string Client::getFile(size_t index) const
@@ -137,6 +139,180 @@ std::string Client::getFile(size_t index) const
 void Client::setFiles(std::vector<std::string> files)
 {
     this->verifiedFiles = files;
+}
+
+/**
+ * @brief Verifies the distribution of data files among clients and writes the
+ * verified files to the client's temporary file.
+ *
+ * This function goes through the files and verifies that each file
+ * belongs to the correct client by reading the process index from the file and
+ * writing the correct client index and file path to a temporary file. The server
+ * will later read these temporary files to update all clients with the correct files.
+ *
+ * This function will be run by the distributor child process as a part of its own process
+ * and runs exclusively on its own subset of files opposed to the previous versions.
+ *
+ * @param numClients The number of clients.
+ * @param files A vector of strings containing the subset of files to be verified
+ * and distributed by the current client.
+ */
+void Client::verifyDataFilesDistribution(int numClients, const std::vector<std::string> &files)
+{
+    std::string debugChFile = "debug_ch_" + std::to_string(this->clientIdx) + ".log";
+    DEBUG_FILE("Verifying data files for client " + std::to_string(this->clientIdx), debugChFile);
+
+    // Write to a temporary file for the client a list of files' correct client index
+    // they belong to and the file path
+    std::ofstream tempFile("tmp/ch_" + std::to_string(this->clientIdx) + ".txt");
+
+    // Go through the specified subset of files and add them to the appropriate client's list
+    for (size_t i = 0; i < files.size(); i++)
+    {
+        const std::string &file = files[i];
+
+        std::string message = "Verifying: " + file;
+        DEBUG_FILE(message, debugChFile);
+
+        // Read the process index for the file to determine which client it belongs to
+        int processIdx = this->getDataFileProcessIdx(file);
+
+        std::string message2 = "Processing file: " + file + " for client process " + std::to_string(processIdx);
+        DEBUG_FILE(message2, debugChFile);
+
+        // Write the correct client index and the file path to the temporary file
+        tempFile << processIdx << " " << file << std::endl;
+    }
+
+    tempFile.close();
+}
+
+/**
+ * @brief Reads temporary files created by all child processes during the data distribution
+ * process and updates the current cilent's verified files list.
+ *
+ * This function iterates over the number of clients and attempts to open a corresponding
+ * temporary file for each client. Expects the temporary files to be named and formatted
+ * in a specific way. Then it updates the client's verified file lists with the files
+ * that match the client's index.
+ *
+ * @param numClients The number of clients.
+ *
+ * @throws std::runtime_error if a temporary file cannot be opened.
+ */
+void Client::readDistributorTempFiles(int numClients)
+{
+    // Read the temporary files created by the child processes and update the
+    // client's verified files list with any files that match the client's index
+    for (int i = 0; i < numClients; i++)
+    {
+        // Expect the temporary files to be named ch_<clientIdx>.txt
+        // Lines should contain the client index and the file path
+        std::ifstream tempFile("tmp/ch_" + std::to_string(i) + ".txt");
+        if (tempFile.is_open())
+        {
+            std::string line;
+            while (std::getline(tempFile, line))
+            {
+                // Extract the process index and file path from the line
+                std::istringstream iss(line);
+                int processIdx;
+                std::string filePath;
+                if (iss >> processIdx >> filePath)
+                {
+                    // If the process index matches the client's index, add the file to the list
+                    if (processIdx == this->clientIdx)
+                    {
+                        this->addFile(filePath);
+                    }
+                }
+            }
+            tempFile.close();
+        }
+        else
+        {
+            std::cerr << "Error opening temporary ch file for client " << i << std::endl;
+            exit(42);
+        }
+    }
+}
+
+/**
+ * @brief Initializes the processor process to sort and combine the data files
+ * contents into a single block of code.
+ *
+ * This function forks a child process and launches the processor program.
+ * The arguments passed to the "processor" executable include:
+ * - The path to the "processor" executable.
+ * - The client index.
+ * - The number of verified files.
+ * - The list of verified files.
+ *
+ * Invariant: Tmporary files have been created and processed into the client's verified
+ * files list by the runDistributorChildProcess function.
+ *
+ * Invaiant: The tmp folder exists, which we know it does because the distributor
+ * process creates it before running the child processes.
+ *
+ * @return A string containing the combined results from processing each client's
+ * data files.
+ *
+ * @throws std::runtime_error if the fork fails or execvp fails.
+ */
+void Client::initializeProcessor()
+{
+    pid_t pid = fork();
+    if (pid == 0)
+    {
+        // Child (Grandchild) process
+        size_t numFiles = this->verifiedFiles.size();
+
+        // Precompute the total number of arguments
+        unsigned int baseArgs = 3;
+        size_t totalArgs = baseArgs + numFiles + 1;
+
+        // Create a vector of strings to store the arguments
+        std::vector<std::string> args(totalArgs);
+        args[0] = std::string(EXECUTABLES_PATH + "processor");
+        args[1] = std::to_string(this->clientIdx);
+        args[2] = std::to_string(numFiles);
+
+        // Add the subset of files for the current client to the argument list
+        for (size_t j = 0; j < numFiles; j++)
+        {
+            args[j + baseArgs] = this->verifiedFiles[j];
+        }
+
+        // Convert the vector of strings to a vector of char* for execvp
+        std::vector<char *> c_args(totalArgs);
+        for (size_t i = 0; i < totalArgs; i++)
+        {
+            c_args[i] = const_cast<char *>(args[i].c_str());
+        }
+        c_args[totalArgs - 1] = nullptr; // Null-terminate the argument list
+
+        DEBUG_FILE("Launching processor for client " + std::to_string(this->clientIdx), "debug.log");
+
+        // Call the child process's own program to process the data files
+        execvp(std::string(EXECUTABLES_PATH + "processor").c_str(), c_args.data());
+
+        // Exit if execvp fails
+        perror("execvp failed");
+        exit(121);
+    }
+    else if (pid > 0)
+    {
+        // Parent process should wait for the child process to finish
+        int status;
+        wait(&status);
+        DEBUG_FILE("Processed data files for client " + std::to_string(this->clientIdx), "debug.log");
+    }
+    else
+    {
+        // Fork failed
+        perror("fork failed");
+        exit(161);
+    }
 }
 
 /**
@@ -168,52 +344,6 @@ int Client::getDataFileProcessIdx(const std::string &filename)
     }
 
     return processIdx;
-}
-
-/**
- * @brief Verifies the distribution of data files among clients and writes the
- * verified files to the client's temporary file.
- *
- * This function goes through the files and verifies that each file
- * belongs to the correct client by reading the process index from the file and
- * writing the correct client index and file path to a temporary file. The server
- * will later read these temporary files to update all clients with the correct files.
- * 
- * This function will be run by the distributor child process as a part of its own process
- * and runs exclusively on its own subset of files opposed to the previous versions.
- *
- * @param numClients The number of clients.
- * @param files A vector of strings containing the subset of files to be verified 
- * and distributed by the current client.
- */
-void Client::verifyDataFilesDistribution(int numClients, const std::vector<std::string> &files)
-{
-    std::string debugChFile = "debug_ch_" + std::to_string(this->clientIdx) + ".log";
-    DEBUG_FILE("Verifying data files for client " + std::to_string(this->clientIdx), debugChFile);
-
-    // Write to a temporary file for the client a list of files' correct client index
-    // they belong to and the file path
-    std::ofstream tempFile("tmp/ch_" + std::to_string(this->clientIdx) + ".txt");
-
-    // Go through the specified subset of files and add them to the appropriate client's list
-    for (size_t i = 0; i < files.size(); i++)
-    {
-        const std::string &file = files[i];
-
-        std::string message = "Verifying: " + file;
-        DEBUG_FILE(message, debugChFile);
-
-        // Read the process index for the file to determine which client it belongs to
-        int processIdx = this->getDataFileProcessIdx(file);
-
-        std::string message2 = "Processing file: " + file + " for client process " + std::to_string(processIdx);
-        DEBUG_FILE(message2, debugChFile);
-
-        // Write the correct client index and the file path to the temporary file
-        tempFile << processIdx << " " << file << std::endl;
-    }
-
-    tempFile.close();
 }
 
 /**

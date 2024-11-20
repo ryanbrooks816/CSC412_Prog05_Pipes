@@ -58,15 +58,15 @@ int main(int argc, char *argv[])
     // it will be sent to the correct distributor process.
 
     // Verify the distribution of data files
-    server.verifyDataFilesDistribution(dataFiles);
+    server.initializeDistributor(dataFiles);
 
     // Then we need to process the data files. Each distributor process will read the
     // data files it has received and sort the lines back into the correct order.
     // It will finally combine the lines back into a block of code.
+    // This step is handeled by the client distributor process, not the server.
+    
     // The server then combines each block of code back into the original program.
-
-    // Perform the data processing
-    std::string reconstructedCode = server.processDataFiles();
+    std::string reconstructedCode = server.readDataProcessingTempFiles();
 
     // Lastly, the server outputs the reconstructed program to a file.
     server.writeOutputFile(outputFile, reconstructedCode);

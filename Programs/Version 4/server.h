@@ -8,6 +8,8 @@
 #include <vector>
 #include <unistd.h>
 #include <sys/wait.h>
+#include <limits.h>
+
 #include "client.h"
 
 class Server
@@ -53,47 +55,32 @@ public:
     std::vector<std::string> getAllDataFiles(const std::string &folderPath);
 
     /**
-     * @brief Verifies the distribution of data files among clients and performs the work
-     * of the distributor processes in this version.
+     * @brief Verifies the distribution of data files among clients and later launches
+     * subprocesses for data distribution and processing.
      *
-     * This function goes through each client and verifies if each client has received
-     * the correct data files. If it finds a data file that doesn't belong to the client,
-     * it will send the data to the correct client by adding the file to the appropriate
-     * client's list.
+     * This function verifies if each client has received the correct data files by forking
+     * a child processes to verify data files. The function creates pipes to communicate between
+     * the parent and child processes. Each child process verifies the data files and sends any files
+     * that don't belong to the client to the correct client. The parent process waits for all child
+     * processes to complete verification and then signals them to proceed wiith processing.
      *
-     * Invariants: The script launching the server process has correctly retrieved the
-     * highest process index to properly distribute the data files. Otherwise, when veryfing
-     * the distribution, it will try to access an index that does not exist.
-     *
-     * @param files A vector of strings representing the names of the data files
+     * @param files A vector of strings representing the data files to be verified.
      */
-    void verifyDataFilesDistribution(const std::vector<std::string> &files);
+    void initializeDistributor(const std::vector<std::string> &files);
 
     /**
-     * @brief Reads temporary files created by child processes during the data distribution
-     * processand updates the clients' file lists.
+     * @brief Runs the distributor child process for a specific client.
      *
-     * This function iterates over the number of clients and attempts to open a corresponding
-     * temporary file for each client. Expects the temporary files to be named and formatted
-     * in a specific way. Then it updates the clients' file lists with the appropriate files.
+     * This function prepares the arguments and executes the distributor program
+     * for the specified client. It constructs the argument list based on the
+     * client's file indices and the total number of clients.
      *
-     * @throws std::runtime_error if a temporary file cannot be opened.
+     * @param i The index of the client for which the distributor process is run.
+     * @param writePipeFd The file descriptor for the write end of the pipe.
+     * @param readPipeFd The file descriptor for the read end of the pipe.
+     * @param files A vector of file paths to be distributed among clients.
      */
-    void readDistributorTempFiles();
-
-    /**
-     * @brief Processes data files for each client and combines the results.
-     *
-     * Processes each client's data files by reading the temporary files created by the first
-     * generation of child processes and then updates the clients' file lists. Then it forks
-     * another child process to handle data processing. Each child process will launch their
-     * own program to process the data files, reconstructing the block of code for each
-     * client and writes the results to a temporary file (sch_<clientIdx>.txt).
-     *
-     * @return A string containing the combined results from processing each client's
-     * data files.
-     */
-    std::string processDataFiles();
+    void runDistributorChildProcess(int i, int writePipeFd, int readPipeFd, const std::vector<std::string> &files);
 
     /**
      * @brief Reads temporary files created by child processes during the data processing

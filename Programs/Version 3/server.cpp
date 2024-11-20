@@ -1,6 +1,7 @@
 #include "server.h"
 #include "testing.h"
-#include <limits.h>
+
+std::string EXECUTABLES_PATH = "./Executables/Version 3/";
 
 /**
  * @brief Constructs a new Server object.
@@ -124,7 +125,7 @@ void Server::verifyDataFilesDistribution(const std::vector<std::string> &files)
 
             // Create a vector of char* to store the arguments
             std::vector<char *> args(totalArgs);
-            args[0] = const_cast<char *>("./Executables/Version 3/distributeData");
+            args[0] = const_cast<char *>(std::string(EXECUTABLES_PATH + "distributor").c_str());
             args[1] = const_cast<char *>(std::to_string(this->numClients).c_str());
             args[2] = const_cast<char *>(std::to_string(i).c_str());
             args[3] = const_cast<char *>(std::to_string(this->clients[i].getFilesStartIdx()).c_str());
@@ -140,7 +141,7 @@ void Server::verifyDataFilesDistribution(const std::vector<std::string> &files)
             args[totalArgs - 1] = nullptr; // Null-terminate the argument list
 
             // Call the child process's own program to verify the distribution of data files
-            execvp("./Executables/Version 3/distributeData", args.data());
+            execvp(std::string(EXECUTABLES_PATH + "distributor").c_str(), args.data());
 
             // Exit if execvp fails
             perror("execvp failed");
@@ -238,7 +239,7 @@ std::string Server::processDataFiles()
 
             // Create a vector of strings to store the arguments
             std::vector<std::string> args(totalArgs);
-            args[0] = "./Executables/Version 3/processData";
+            args[0] = std::string(EXECUTABLES_PATH + "processor");
             args[1] = std::to_string(i);
             args[2] = std::to_string(numFiles);
 
@@ -257,7 +258,7 @@ std::string Server::processDataFiles()
             c_args.push_back(nullptr); // Null-terminate the argument list
 
             // Call the child process's own program to process the data files
-            execvp("./Executables/Version 3/processData", c_args.data());
+            execvp(std::string(EXECUTABLES_PATH + "processor").c_str(), c_args.data());
 
             // Exit if execvp fails
             perror("execvp failed");

@@ -28,6 +28,7 @@ int main(int argc, char *argv[])
 
     // Process the data files and reconstruct the block of code
     client.processDataFiles();
+    DEBUG_FILE("(processor " + std::to_string(clientIdx) + ") Processed data files", "debug.log");
 
     return 0;
 }

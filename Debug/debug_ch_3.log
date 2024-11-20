@@ -1,0 +1,622 @@
+Client id 3 created.
+Verifying data files for client 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f72.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f72.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f720.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f720.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f721.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f721.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f722.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f722.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f723.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f723.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f724.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f724.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f725.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f725.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f726.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f726.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f727.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f727.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f728.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f728.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f729.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f729.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f73.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f73.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f730.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f730.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f731.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f731.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f732.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f732.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f733.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f733.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f734.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f734.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f735.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f735.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f736.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f736.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f737.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f737.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f738.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f738.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f739.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f739.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f74.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f74.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f740.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f740.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f741.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f741.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f742.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f742.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f743.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f743.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f744.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f744.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f745.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f745.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f746.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f746.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f747.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f747.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f748.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f748.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f749.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f749.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f75.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f75.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f750.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f750.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f751.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f751.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f752.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f752.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f753.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f753.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f754.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f754.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f755.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f755.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f756.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f756.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f757.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f757.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f758.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f758.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f759.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f759.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f76.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f76.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f760.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f760.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f761.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f761.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f762.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f762.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f763.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f763.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f764.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f764.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f765.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f765.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f766.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f766.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f767.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f767.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f768.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f768.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f769.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f769.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f77.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f77.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f770.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f770.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f771.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f771.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f772.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f772.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f773.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f773.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f774.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f774.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f775.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f775.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f776.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f776.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f777.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f777.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f778.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f778.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f779.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f779.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f78.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f78.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f780.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f780.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f781.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f781.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f782.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f782.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f783.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f783.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f784.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f784.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f785.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f785.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f786.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f786.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f787.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f787.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f788.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f788.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f789.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f789.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f79.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f79.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f790.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f790.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f791.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f791.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f792.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f792.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f793.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f793.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f794.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f794.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f795.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f795.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f796.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f796.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f797.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f797.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f798.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f798.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f799.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f799.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f8.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f8.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f80.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f80.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f800.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f800.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f801.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f801.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f802.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f802.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f803.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f803.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f804.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f804.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f805.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f805.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f806.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f806.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f807.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f807.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f808.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f808.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f809.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f809.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f81.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f81.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f810.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f810.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f811.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f811.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f812.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f812.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f813.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f813.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f814.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f814.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f815.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f815.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f816.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f816.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f817.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f817.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f818.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f818.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f819.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f819.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f82.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f82.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f820.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f820.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f821.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f821.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f822.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f822.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f823.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f823.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f824.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f824.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f825.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f825.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f826.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f826.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f827.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f827.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f828.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f828.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f829.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f829.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f83.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f83.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f830.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f830.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f831.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f831.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f832.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f832.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f833.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f833.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f834.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f834.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f835.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f835.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f836.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f836.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f837.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f837.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f838.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f838.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f839.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f839.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f84.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f84.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f840.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f840.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f841.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f841.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f842.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f842.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f843.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f843.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f844.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f844.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f845.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f845.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f846.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f846.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f847.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f847.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f848.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f848.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f849.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f849.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f85.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f85.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f850.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f850.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f851.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f851.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f852.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f852.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f853.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f853.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f854.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f854.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f855.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f855.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f856.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f856.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f857.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f857.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f858.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f858.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f859.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f859.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f86.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f86.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f860.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f860.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f861.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f861.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f862.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f862.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f863.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f863.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f864.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f864.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f865.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f865.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f866.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f866.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f867.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f867.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f868.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f868.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f869.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f869.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f87.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f87.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f870.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f870.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f871.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f871.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f872.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f872.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f873.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f873.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f874.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f874.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f875.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f875.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f876.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f876.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f877.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f877.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f878.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f878.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f879.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f879.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f88.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f88.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f880.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f880.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f881.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f881.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f882.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f882.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f883.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f883.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f884.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f884.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f885.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f885.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f886.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f886.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f887.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f887.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f888.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f888.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f889.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f889.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f89.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f89.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f890.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f890.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f891.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f891.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f892.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f892.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f893.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f893.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f894.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f894.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f895.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f895.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f896.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f896.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f897.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f897.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f898.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f898.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f899.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f899.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f9.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f9.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f90.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f90.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f900.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f900.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f901.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f901.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f902.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f902.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f903.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f903.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f904.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f904.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f905.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f905.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f906.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f906.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f907.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f907.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f908.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f908.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f909.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f909.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f91.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f91.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f910.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f910.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f911.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f911.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f912.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f912.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f913.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f913.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f914.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f914.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f915.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f915.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f916.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f916.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f917.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f917.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f918.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f918.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f919.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f919.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f92.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f92.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f920.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f920.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f921.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f921.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f922.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f922.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f923.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f923.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f924.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f924.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f925.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f925.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f926.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f926.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f927.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f927.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f928.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f928.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f929.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f929.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f93.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f93.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f930.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f930.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f931.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f931.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f932.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f932.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f933.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f933.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f934.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f934.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f935.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f935.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f936.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f936.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f937.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f937.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f938.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f938.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f939.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f939.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f94.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f94.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f940.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f940.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f941.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f941.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f942.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f942.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f943.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f943.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f944.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f944.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f945.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f945.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f946.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f946.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f947.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f947.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f948.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f948.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f949.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f949.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f95.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f95.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f950.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f950.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f951.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f951.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f952.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f952.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f953.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f953.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f954.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f954.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f955.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f955.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f956.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f956.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f957.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f957.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f958.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f958.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f959.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f959.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f96.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f96.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f960.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f960.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f961.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f961.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f962.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f962.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f963.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f963.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f964.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f964.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f965.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f965.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f966.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f966.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f967.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f967.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f968.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f968.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f969.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f969.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f97.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f97.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f970.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f970.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f971.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f971.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f972.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f972.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f973.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f973.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f974.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f974.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f975.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f975.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f976.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f976.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f977.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f977.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f978.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f978.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f979.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f979.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f98.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f98.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f980.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f980.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f981.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f981.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f982.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f982.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f983.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f983.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f984.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f984.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f985.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f985.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f986.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f986.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f987.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f987.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f988.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f988.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f989.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f989.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f99.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f99.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f990.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f990.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f991.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f991.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f992.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f992.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f993.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f993.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f994.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f994.txt for client process 3
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f995.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f995.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f996.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f996.txt for client process 0
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f997.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f997.txt for client process 1
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f998.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f998.txt for client process 2
+Verifying: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f999.txt
+Processing file: ./Data/Data-Sets/Data-Sets/Large-Data-Sets/DataSet-3--4-procs/f999.txt for client process 3

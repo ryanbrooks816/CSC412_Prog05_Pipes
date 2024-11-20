@@ -1,6 +1,5 @@
 #include "server.h"
 #include "testing.h"
-#include <limits.h>
 
 /**
  * @brief Constructs a new Server object.
@@ -94,191 +93,165 @@ std::vector<std::string> Server::getAllDataFiles(const std::string &folderPath)
 }
 
 /**
- * @brief Verifies the distribution of data files among clients and performs the work
- * of the distributor processes in this version.
+ * @brief Verifies the distribution of data files among clients and later launches 
+ * subprocesses for data distribution and processing.
  *
- * This function goes through each client and verifies if each client has received
- * the correct data files by forking a child process for each client. Each child process
- * will laucnh their own program to verify the distribution of data files and ouputs
- * the results to a temporary file (ch_<clientIdx>.txt).
+ * This function verifies if each client has received the correct data files by forking
+ * a child processes to verify data files. The function creates pipes to communicate between
+ * the parent and child processes. Each child process verifies the data files and sends any files
+ * that don't belong to the client to the correct client. The parent process waits for all child
+ * processes to complete verification and then signals them to proceed wiith processing.
  *
- * @param files A vector of strings representing the names of the data files
+ * @param files A vector of strings representing the data files to be verified.
  */
-void Server::verifyDataFilesDistribution(const std::vector<std::string> &files)
+void Server::initializeDistributor(const std::vector<std::string> &files)
 {
     // Make sure the tmp directory exists
     std::filesystem::create_directory("./tmp");
+
+    // Keep track of the number of clients that have been verified to know when
+    // all clients have been processed
+    int clientsVerified = 0;
+
+    // Create pipes for each child
+    std::vector<int> childToParentPipes(numClients);
+    std::vector<int> parentToChildPipes(numClients);
+    std::vector<pid_t> childPIDs(numClients);
 
     // Fork a child process for each client that will call a function to verify the data files
     // and send any files that don't belong to the client to the correct client
     for (int i = 0; i < this->numClients; i++)
     {
+        // Create pipes for each child process
+        int pipeChildToParent[2], pipeParentToChild[2];
+        if (pipe(pipeChildToParent) == -1 || pipe(pipeParentToChild) == -1)
+        {
+            perror("pipe failed");
+            exit(150);
+        }
+
         pid_t pid = fork();
         if (pid == 0)
         {
             // Child process
-            int numFiles = this->clients[i].getFilesEndIdx() - this->clients[i].getFilesStartIdx();
+            close(pipeChildToParent[0]); // Close read end of child-to-parent pipe
+            close(pipeParentToChild[1]); // Close write end of parent-to-child pipe
 
-            // Precompute the total number of arguments
-            size_t totalArgs = 5 + numFiles + 1;
-
-            // Create a vector of char* to store the arguments
-            std::vector<char *> args(totalArgs);
-            args[0] = const_cast<char *>("./Executables/Version 4/distributeData");
-            args[1] = const_cast<char *>(std::to_string(this->numClients).c_str());
-            args[2] = const_cast<char *>(std::to_string(i).c_str());
-            args[3] = const_cast<char *>(std::to_string(this->clients[i].getFilesStartIdx()).c_str());
-            args[4] = const_cast<char *>(std::to_string(this->clients[i].getFilesEndIdx()).c_str());
-
-            // Add the subset of files for the current client to the argument list
-            int argsStartIdx = 5;
-            for (int j = this->clients[i].getFilesStartIdx(); j < this->clients[i].getFilesEndIdx(); ++j)
-            {
-                args[argsStartIdx++] = const_cast<char *>(files[j].c_str());
-            }
-
-            args[totalArgs - 1] = nullptr; // Null-terminate the argument list
-
-            // Call the child process's own program to verify the distribution of data files
-            execvp("./Executables/Version 4/distributeData", args.data());
-
-            // Exit if execvp fails
-            perror("execvp failed");
-            exit(120);
+            this->runDistributorChildProcess(i, pipeChildToParent[1], pipeParentToChild[0], files);
+            exit(0); // Exit child process
         }
-    }
-
-    // Parent process waits for all child processes to finish
-    for (int i = 0; i < this->numClients; i++)
-    {
-        int status;
-        wait(&status);
-    }
-
-    DEBUG_FILE("Verified data files distribution.", "debug.log");
-}
-
-/**
- * @brief Reads temporary files created by child processes during the data distribution
- * processand updates the clients' file lists.
- *
- * This function iterates over the number of clients and attempts to open a corresponding
- * temporary file for each client. Expects the temporary files to be named and formatted
- * in a specific way. Then it updates the clients' file lists with the appropriate files.
- *
- * @throws std::runtime_error if a temporary file cannot be opened.
- */
-void Server::readDistributorTempFiles()
-{
-    // Read the temporary files created by the child processes and update the clients' file lists
-    for (int i = 0; i < this->numClients; i++)
-    {
-        // Expect the temporary files to be named ch_<clientIdx>.txt
-        // Lines should contain the client index and the file path
-        std::ifstream tempFile("tmp/ch_" + std::to_string(i) + ".txt");
-        if (tempFile.is_open())
+        else if (pid > 0)
         {
-            std::string line;
-            while (std::getline(tempFile, line))
-            {
-                // Extract the process index and file path from the line
-                std::istringstream iss(line);
-                int processIdx;
-                std::string filePath;
-                if (iss >> processIdx >> filePath)
-                {
-                    // Add the file to the client's list
-                    this->clients[processIdx].addFile(filePath);
-                }
-            }
-            tempFile.close();
+            // Parent process
+            childPIDs[i] = pid;
+            childToParentPipes[i] = pipeChildToParent[0]; // Read end of child-to-parent pipe
+            parentToChildPipes[i] = pipeParentToChild[1]; // Write end of parent-to-child pipe
+
+            close(pipeChildToParent[1]); // Close write end in parent
+            close(pipeParentToChild[0]); // Close read end in parent
         }
         else
         {
-            std::cerr << "Error opening temporary ch file for client " << i << std::endl;
-            exit(42);
+            perror("fork failed");
+            exit(160);
         }
     }
+
+    DEBUG_FILE("Launched child processes to verify data files distribution.", "debug.log");
+
+    // Parent waits for child signals
+    while (clientsVerified < numClients)
+    {
+        for (int i = 0; i < numClients; ++i)
+        {
+            if (childToParentPipes[i] != -1)
+            {
+                int clientIdx;
+                ssize_t bytesRead = read(childToParentPipes[i], &clientIdx, sizeof(clientIdx));
+                if (bytesRead > 0)
+                {
+                    ++clientsVerified;
+                    close(childToParentPipes[i]); // Close pipe once data is read
+                    childToParentPipes[i] = -1;   // Mark as closed
+                }
+            }
+        }
+    }
+
+    DEBUG_FILE("Verified data files distribution for all clients.", "debug.log");
+
+    // Notify all children to proceed
+    for (int i = 0; i < numClients; ++i)
+    {
+        int signal = 1; // Arbitrary signal
+        write(parentToChildPipes[i], &signal, sizeof(signal));
+        close(parentToChildPipes[i]); // Close write end after signaling
+    }
+
+    // Wait for all child processes to finish
+    for (int i = 0; i < numClients; i++)
+    {
+        int status;
+        waitpid(childPIDs[i], &status, 0);
+    }
+
+    DEBUG_FILE("Finished distributing and processing data files.", "debug.log");
 }
 
 /**
- * @brief Processes data files for each client and combines the results.
+ * @brief Runs the distributor child process for a specific client.
  *
- * Processes each client's data files by reading the temporary files created by the first
- * generation of child processes and then updates the clients' file lists. Then it forks
- * another child process to handle data processing. Each child process will launch their
- * own program to process the data files, reconstructing the block of code for each
- * client and writes the results to a temporary file (sch_<clientIdx>.txt).
+ * This function prepares the arguments and executes the distributor program
+ * for the specified client. It constructs the argument list based on the
+ * client's file indices and the total number of clients.
  *
- * @return A string containing the combined results from processing each client's
- * data files.
+ * @param i The index of the client for which the distributor process is run.
+ * @param writePipeFd The file descriptor for the write end of the pipe.
+ * @param readPipeFd The file descriptor for the read end of the pipe.
+ * @param files A vector of file paths to be distributed among clients.
  */
-std::string Server::processDataFiles()
+void Server::runDistributorChildProcess(int i, int writePipeFd, int readPipeFd, const std::vector<std::string> &files)
 {
-    // First read the temporary files created by the child processes and update all clients
-    // verified file lists to know which files each client should process
-    this->readDistributorTempFiles();
+    int numFiles = this->clients[i].getFilesEndIdx() - this->clients[i].getFilesStartIdx();
 
-    // Make sure the tmp directory exists
-    std::filesystem::create_directory("./tmp");
+    // Precompute the total number of arguments
+    unsigned int baseArgs = 7;
+    size_t totalArgs = baseArgs + numFiles + 1;
 
-    std::string combinedResult;
+    // Create a vector of strings to store the arguments
 
-    // For each client, process the data files, which produces the reconstructed block of code
-    for (int i = 0; i < this->numClients; i++)
+    std::vector<std::string> args(totalArgs);
+    args[0] = std::string(EXECUTABLES_PATH + "distributor");
+    args[1] = std::to_string(writePipeFd);
+    args[2] = std::to_string(readPipeFd);
+    args[3] = std::to_string(this->numClients);
+    args[4] = std::to_string(i);
+    args[5] = std::to_string(this->clients[i].getFilesStartIdx());
+    args[6] = std::to_string(this->clients[i].getFilesEndIdx());
+
+    // Add the subset of files for the current client to the argument list
+    int argsStartIdx = baseArgs;
+    for (int j = this->clients[i].getFilesStartIdx(); j < this->clients[i].getFilesEndIdx(); ++j)
     {
-        pid_t pid = fork();
-        if (pid == 0)
-        {
-            // Child process
-            size_t numFiles = this->clients[i].getFiles().size();
-
-            // Precompute the total number of arguments
-            size_t totalArgs = 3 + numFiles + 1;
-
-            // Create a vector of strings to store the arguments
-            std::vector<std::string> args(totalArgs);
-            args[0] = "./Executables/Version 4/processData";
-            args[1] = std::to_string(i);
-            args[2] = std::to_string(numFiles);
-
-            // Add the subset of files for the current client to the argument list
-            for (size_t j = 0; j < numFiles; j++)
-            {
-                args[j + 3] = this->clients[i].getFile(j);
-            }
-
-            // Convert the vector of strings to a vector of char* for execvp
-            std::vector<char *> c_args;
-            for (auto &arg : args)
-            {
-                c_args.push_back(const_cast<char *>(arg.c_str()));
-            }
-            c_args.push_back(nullptr); // Null-terminate the argument list
-
-            // Call the child process's own program to process the data files
-            execvp("./Executables/Version 4/processData", c_args.data());
-
-            // Exit if execvp fails
-            perror("execvp failed");
-            exit(121);
-        }
+        args[argsStartIdx++] = files[j];
     }
 
-    // Parent process waits for all child processes to finish
-    for (int i = 0; i < this->numClients; i++)
+    // Convert the vector of strings to a vector of char* for execvp
+    std::vector<char *> c_args(totalArgs);
+    for (size_t i = 0; i < totalArgs; i++)
     {
-        int status;
-        wait(&status);
+        c_args[i] = const_cast<char *>(args[i].c_str());
     }
+    c_args[totalArgs - 1] = nullptr; // Null-terminate the argument list
 
-    // Read the temporary files created by the child processes and combine the results
-    // Return the entire combined program
-    combinedResult = this->readDataProcessingTempFiles();
+    DEBUG_FILE("Launched a distributor process for client " + std::to_string(i), "debug.log");
 
-    DEBUG_FILE("Processed data files.", "debug.log");
+    // Call the child process's own program to verify the distribution of data files
+    execvp(std::string(EXECUTABLES_PATH + "distributor").c_str(), c_args.data());
 
-    return combinedResult;
+    // Exit if execvp fails
+    perror("execvp failed");
+    exit(120);
 }
 
 /**

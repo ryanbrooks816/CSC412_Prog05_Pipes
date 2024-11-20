@@ -8,6 +8,7 @@
 #include <vector>
 #include <unistd.h>
 #include <sys/wait.h>
+#include <limits.h>
 #include "client.h"
 
 class Server
@@ -60,10 +61,6 @@ public:
      * the correct data files. If it finds a data file that doesn't belong to the client,
      * it will send the data to the correct client by adding the file to the appropriate
      * client's list.
-     *
-     * Invariants: The script launching the server process has correctly retrieved the
-     * highest process index to properly distribute the data files. Otherwise, when veryfing
-     * the distribution, it will try to access an index that does not exist.
      *
      * @param files A vector of strings representing the names of the data files
      */
