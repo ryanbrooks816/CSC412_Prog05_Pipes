@@ -83,22 +83,6 @@ public:
     void runDistributorChildProcess(int i, int writePipeFd, int readPipeFd, const std::vector<std::string> &files);
 
     /**
-     * @brief Reads temporary files created by child processes during the data processing
-     * process and combines the results.
-     *
-     * This function iterates over the number of clients and attempts to open a corresponding
-     * temporary file for each client. Expects the temporary files to be named and formatted
-     * in a specific way. Then it reads the contents of each file and combines them into
-     * a single string representing the complete code block.
-     *
-     * @return A string containing the combined results from processing each client's
-     * data files.
-     *
-     * @throws std::runtime_error if a temporary file cannot be opened.
-     */
-    std::string readDataProcessingTempFiles();
-
-    /**
      * @brief Writes the given content to the specified output file.
      *
      * This function attempts to open the specified output file and write the provided

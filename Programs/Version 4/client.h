@@ -165,6 +165,34 @@ public:
     void initializeProcessor();
 
     /**
+     * @brief Runs the processor child process to sort and combine the data files.
+     *
+     * This function is called by the child process to run the processor program.
+     * The processor program reads the temporary files created by the distributor
+     * process, sorts the lines based on their line numbers, and combines them into
+     * a single block of code. The results are written to a temporary file to be read
+     * by distributor (parent) process and eventually processed by the server.
+     *
+     */
+    void runProcessorChildProcess();
+
+    /**
+     * @brief Reads temporary file created by child processe during the data processing
+     * process and combines the results.
+     *
+     * This function attempts to open a corresponding temporary file containing the processed
+     * lines of code from the client's data files. Expects the temporary files to be named
+     * and formatted in a specific way. Then it reads the contents of each file and combines
+     * them into a single string representing the complete code block.
+     *
+     * @return A string containing the combined results from processing the client's
+     * data files.
+     *
+     * @throws std::runtime_error if a temporary file cannot be opened.
+     */
+    std::string Client::readDataProcessingTempFile();
+
+    /**
      * @brief Retrieves the process index from the first line of a given file.
      *
      * Opens the specified file and reads the first line to extract

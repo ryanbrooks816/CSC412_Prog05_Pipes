@@ -264,41 +264,9 @@ void Client::initializeProcessor()
     pid_t pid = fork();
     if (pid == 0)
     {
-        // Child (Grandchild) process
-        size_t numFiles = this->verifiedFiles.size();
-
-        // Precompute the total number of arguments
-        unsigned int baseArgs = 3;
-        size_t totalArgs = baseArgs + numFiles + 1;
-
-        // Create a vector of strings to store the arguments
-        std::vector<std::string> args(totalArgs);
-        args[0] = std::string(EXECUTABLES_PATH + "processor");
-        args[1] = std::to_string(this->clientIdx);
-        args[2] = std::to_string(numFiles);
-
-        // Add the subset of files for the current client to the argument list
-        for (size_t j = 0; j < numFiles; j++)
-        {
-            args[j + baseArgs] = this->verifiedFiles[j];
-        }
-
-        // Convert the vector of strings to a vector of char* for execvp
-        std::vector<char *> c_args(totalArgs);
-        for (size_t i = 0; i < totalArgs; i++)
-        {
-            c_args[i] = const_cast<char *>(args[i].c_str());
-        }
-        c_args[totalArgs - 1] = nullptr; // Null-terminate the argument list
-
-        DEBUG_FILE("Launching processor for client " + std::to_string(this->clientIdx), "debug.log");
-
-        // Call the child process's own program to process the data files
-        execvp(std::string(EXECUTABLES_PATH + "processor").c_str(), c_args.data());
-
-        // Exit if execvp fails
-        perror("execvp failed");
-        exit(121);
+        // Child process
+        this->runProcessorChildProcess();
+        exit(0);
     }
     else if (pid > 0)
     {
@@ -306,13 +274,113 @@ void Client::initializeProcessor()
         int status;
         wait(&status);
         DEBUG_FILE("Processed data files for client " + std::to_string(this->clientIdx), "debug.log");
+
+        // Read the temporary file created by the child process and create the combined code block
+        std::string combinedResult = this->readDataProcessingTempFile();
+
+        // Send this back to the parent process. Pipes.
+        // Will probably need to create pipes in the distribor file
+        // Then write to the pipe here
+        // But how can the server then know about what happend in the distribor file
+        // Would I instead of have to create more pies in the server file and then pass
+        // even more pipes to the distribor? Idk. 
+        // Somehow the server needs to know about the pipes the distribor has
+        // so I either need to create all the of the pipes for both what's crrently
+        // used by the distribot and these new pipes between the distribot and process
+        // or just make 2 levels of pipes.
     }
     else
     {
-        // Fork failed
         perror("fork failed");
         exit(161);
     }
+}
+
+/**
+ * @brief Runs the processor child process to sort and combine the data files.
+ *
+ * This function is called by the child process to run the processor program.
+ * The processor program reads the temporary files created by the distributor
+ * process, sorts the lines based on their line numbers, and combines them into
+ * a single block of code. The results are written to a temporary file to be read
+ * by distributor (parent) process and eventually processed by the server.
+ *
+ */
+void Client::runProcessorChildProcess()
+{
+    // Child (Grandchild) process
+    size_t numFiles = this->verifiedFiles.size();
+
+    // Precompute the total number of arguments
+    unsigned int baseArgs = 3;
+    size_t totalArgs = baseArgs + numFiles + 1;
+
+    // Create a vector of strings to store the arguments
+    std::vector<std::string> args(totalArgs);
+    args[0] = std::string(EXECUTABLES_PATH + "processor");
+    args[1] = std::to_string(this->clientIdx);
+    args[2] = std::to_string(numFiles);
+
+    // Add the subset of files for the current client to the argument list
+    for (size_t j = 0; j < numFiles; j++)
+    {
+        args[j + baseArgs] = this->verifiedFiles[j];
+    }
+
+    // Convert the vector of strings to a vector of char* for execvp
+    std::vector<char *> c_args(totalArgs);
+    for (size_t i = 0; i < totalArgs; i++)
+    {
+        c_args[i] = const_cast<char *>(args[i].c_str());
+    }
+    c_args[totalArgs - 1] = nullptr; // Null-terminate the argument list
+
+    DEBUG_FILE("Launching processor for client " + std::to_string(this->clientIdx), "debug.log");
+
+    // Call the child process's own program to process the data files
+    execvp(std::string(EXECUTABLES_PATH + "processor").c_str(), c_args.data());
+
+    // Exit if execvp fails
+    perror("execvp failed");
+    exit(121);
+}
+
+/**
+ * @brief Reads temporary file created by child processe during the data processing
+ * process and combines the results.
+ *
+ * This function attempts to open a corresponding temporary file containing the processed 
+ * lines of code from the client's data files. Expects the temporary files to be named 
+ * and formatted in a specific way. Then it reads the contents of each file and combines 
+ * them into a single string representing the complete code block.
+ *
+ * @return A string containing the combined results from processing the client's
+ * data files.
+ *
+ * @throws std::runtime_error if a temporary file cannot be opened.
+ */
+std::string Client::readDataProcessingTempFile()
+{
+    std::string combinedResult;
+
+    // Read the temporary file created by the child process and retrieve the combined code block
+    std::ifstream tempFile("tmp/sch_" + std::to_string(this->clientIdx) + ".txt");
+    if (tempFile.is_open())
+    {
+        std::string line;
+        while (std::getline(tempFile, line))
+        {
+            combinedResult += line + "\n";
+        }
+        tempFile.close();
+    }
+    else
+    {
+        std::cerr << "Error opening temporary sch file for client " << this->clientIdx << std::endl;
+        exit(43);
+    }
+
+    return combinedResult;
 }
 
 /**

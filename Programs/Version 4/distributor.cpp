@@ -62,7 +62,8 @@ int main(int argc, char *argv[])
     client.readDistributorTempFiles(numClients);
     DEBUG_FILE("(distributor " + std::to_string(clientIdx) + ") Read distributor temp files", "debug.log");
 
-    //
+    // Initialize the processor process to sort and combine the data files contents
+    // Writes the results to a temporary file
     client.initializeProcessor();
     DEBUG_FILE("(distributor " + std::to_string(clientIdx) + ") Finished processing data files", "debug.log");
     return 0;

@@ -93,7 +93,7 @@ std::vector<std::string> Server::getAllDataFiles(const std::string &folderPath)
 }
 
 /**
- * @brief Verifies the distribution of data files among clients and later launches 
+ * @brief Verifies the distribution of data files among clients and later launches
  * subprocesses for data distribution and processing.
  *
  * This function verifies if each client has received the correct data files by forking
@@ -149,50 +149,50 @@ void Server::initializeDistributor(const std::vector<std::string> &files)
 
             close(pipeChildToParent[1]); // Close write end in parent
             close(pipeParentToChild[0]); // Close read end in parent
+
+            DEBUG_FILE("Launched child processes to verify data files distribution.", "debug.log");
+
+            // Waits for child signals
+            while (clientsVerified < numClients)
+            {
+                for (int i = 0; i < numClients; ++i)
+                {
+                    if (childToParentPipes[i] != -1)
+                    {
+                        int clientIdx;
+                        ssize_t bytesRead = read(childToParentPipes[i], &clientIdx, sizeof(clientIdx));
+                        if (bytesRead > 0)
+                        {
+                            ++clientsVerified;
+                            close(childToParentPipes[i]); // Close pipe once data is read
+                            childToParentPipes[i] = -1;   // Mark as closed
+                        }
+                    }
+                }
+            }
+
+            DEBUG_FILE("Verified data files distribution for all clients.", "debug.log");
+
+            // Notify all children to proceed
+            for (int i = 0; i < numClients; ++i)
+            {
+                int signal = 1; // Arbitrary signal
+                write(parentToChildPipes[i], &signal, sizeof(signal));
+                close(parentToChildPipes[i]); // Close write end after signaling
+            }
+
+            // Wait for all child processes to finish
+            for (int i = 0; i < numClients; i++)
+            {
+                int status;
+                waitpid(childPIDs[i], &status, 0);
+            }
         }
         else
         {
             perror("fork failed");
             exit(160);
         }
-    }
-
-    DEBUG_FILE("Launched child processes to verify data files distribution.", "debug.log");
-
-    // Parent waits for child signals
-    while (clientsVerified < numClients)
-    {
-        for (int i = 0; i < numClients; ++i)
-        {
-            if (childToParentPipes[i] != -1)
-            {
-                int clientIdx;
-                ssize_t bytesRead = read(childToParentPipes[i], &clientIdx, sizeof(clientIdx));
-                if (bytesRead > 0)
-                {
-                    ++clientsVerified;
-                    close(childToParentPipes[i]); // Close pipe once data is read
-                    childToParentPipes[i] = -1;   // Mark as closed
-                }
-            }
-        }
-    }
-
-    DEBUG_FILE("Verified data files distribution for all clients.", "debug.log");
-
-    // Notify all children to proceed
-    for (int i = 0; i < numClients; ++i)
-    {
-        int signal = 1; // Arbitrary signal
-        write(parentToChildPipes[i], &signal, sizeof(signal));
-        close(parentToChildPipes[i]); // Close write end after signaling
-    }
-
-    // Wait for all child processes to finish
-    for (int i = 0; i < numClients; i++)
-    {
-        int status;
-        waitpid(childPIDs[i], &status, 0);
     }
 
     DEBUG_FILE("Finished distributing and processing data files.", "debug.log");
@@ -252,49 +252,6 @@ void Server::runDistributorChildProcess(int i, int writePipeFd, int readPipeFd, 
     // Exit if execvp fails
     perror("execvp failed");
     exit(120);
-}
-
-/**
- * @brief Reads temporary files created by child processes during the data processing
- * process and combines the results.
- *
- * This function iterates over the number of clients and attempts to open a corresponding
- * temporary file for each client. Expects the temporary files to be named and formatted
- * in a specific way. Then it reads the contents of each file and combines them into
- * a single string representing the complete code block.
- *
- * @return A string containing the combined results from processing each client's
- * data files.
- *
- * @throws std::runtime_error if a temporary file cannot be opened.
- */
-std::string Server::readDataProcessingTempFiles()
-{
-    std::string combinedResult;
-
-    // Read the temporary files created by each child process and retrieve the combined code block
-    for (int i = 0; i < this->numClients; i++)
-    {
-        // Expect the temporary files to be named sch_<clientIdx>.txt
-        // Lines should contain lines of code sorted and processed by the child process
-        std::ifstream tempFile("tmp/sch_" + std::to_string(i) + ".txt");
-        if (tempFile.is_open())
-        {
-            std::string line;
-            while (std::getline(tempFile, line))
-            {
-                combinedResult += line + "\n";
-            }
-            tempFile.close();
-        }
-        else
-        {
-            std::cerr << "Error opening temporary sch file for client " << i << std::endl;
-            exit(43);
-        }
-    }
-
-    return combinedResult;
 }
 
 /**
