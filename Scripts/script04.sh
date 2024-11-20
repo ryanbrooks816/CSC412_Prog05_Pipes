@@ -26,4 +26,4 @@ done
 echo "Launching server process with $highest_process_idx processes"
 
 # Launch the server process
-./Executables/Version\ 3/version3 $highest_process_idx $data_folder $output_file
+./Executables/Version\ 4/version4 $highest_process_idx $data_folder $output_file

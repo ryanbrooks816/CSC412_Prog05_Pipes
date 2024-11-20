@@ -130,8 +130,6 @@ void Server::verifyDataFilesDistribution(const std::vector<std::string> &files)
         wait(&status);
     }
 
-    std::cout << "Verified data files distribution." << std::endl;
-
     // Read the temporary files created by the child processes and update the clients' file lists
     this->readDistributorTempFiles(files);
 
