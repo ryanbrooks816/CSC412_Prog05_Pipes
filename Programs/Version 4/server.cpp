@@ -104,14 +104,10 @@ std::vector<std::string> Server::getAllDataFiles(const std::string &folderPath)
  *
  * @param files A vector of strings representing the data files to be verified.
  */
-void Server::initializeDistributor(const std::vector<std::string> &files)
+std::string Server::initializeDistributor(const std::vector<std::string> &files)
 {
     // Make sure the tmp directory exists
     std::filesystem::create_directory("./tmp");
-
-    // Keep track of the number of clients that have been verified to know when
-    // all clients have been processed
-    int clientsVerified = 0;
 
     // Create pipes for each child
     std::vector<int> childToParentPipes(numClients);
@@ -122,11 +118,13 @@ void Server::initializeDistributor(const std::vector<std::string> &files)
     // and send any files that don't belong to the client to the correct client
     for (int i = 0; i < this->numClients; i++)
     {
-        // Create pipes for each child process
-        int pipeChildToParent[2], pipeParentToChild[2];
+        // Create pipes for child-to-parent and parent-to-child communication
+        int pipeChildToParent[2]; // [0] = read, [1] = write
+        int pipeParentToChild[2]; // [0] = read, [1] = write
+
         if (pipe(pipeChildToParent) == -1 || pipe(pipeParentToChild) == -1)
         {
-            perror("pipe failed");
+            std::cerr << "Creating pipes failed" << std::endl;
             exit(150);
         }
 
@@ -137,6 +135,8 @@ void Server::initializeDistributor(const std::vector<std::string> &files)
             close(pipeChildToParent[0]); // Close read end of child-to-parent pipe
             close(pipeParentToChild[1]); // Close write end of parent-to-child pipe
 
+            // Pass the client's index, the write end of the child to parent pipe,
+            // the read end of the parent to child pipe, and the list of files to the child process
             this->runDistributorChildProcess(i, pipeChildToParent[1], pipeParentToChild[0], files);
             exit(0); // Exit child process
         }
@@ -144,58 +144,39 @@ void Server::initializeDistributor(const std::vector<std::string> &files)
         {
             // Parent process
             childPIDs[i] = pid;
-            childToParentPipes[i] = pipeChildToParent[0]; // Read end of child-to-parent pipe
-            parentToChildPipes[i] = pipeParentToChild[1]; // Write end of parent-to-child pipe
+            childToParentPipes[i] = pipeChildToParent[0]; // Read end of child-to-parent pipe (for receiving signals)
+            parentToChildPipes[i] = pipeParentToChild[1]; // Write end of parent-to-child pipe (for sending signals)
 
             close(pipeChildToParent[1]); // Close write end in parent
             close(pipeParentToChild[0]); // Close read end in parent
-
-            DEBUG_FILE("Launched child processes to verify data files distribution.", "debug.log");
-
-            // Waits for child signals
-            while (clientsVerified < numClients)
-            {
-                for (int i = 0; i < numClients; ++i)
-                {
-                    if (childToParentPipes[i] != -1)
-                    {
-                        int clientIdx;
-                        ssize_t bytesRead = read(childToParentPipes[i], &clientIdx, sizeof(clientIdx));
-                        if (bytesRead > 0)
-                        {
-                            ++clientsVerified;
-                            close(childToParentPipes[i]); // Close pipe once data is read
-                            childToParentPipes[i] = -1;   // Mark as closed
-                        }
-                    }
-                }
-            }
-
-            DEBUG_FILE("Verified data files distribution for all clients.", "debug.log");
-
-            // Notify all children to proceed
-            for (int i = 0; i < numClients; ++i)
-            {
-                int signal = 1; // Arbitrary signal
-                write(parentToChildPipes[i], &signal, sizeof(signal));
-                close(parentToChildPipes[i]); // Close write end after signaling
-            }
-
-            // Wait for all child processes to finish
-            for (int i = 0; i < numClients; i++)
-            {
-                int status;
-                waitpid(childPIDs[i], &status, 0);
-            }
         }
         else
         {
-            perror("fork failed");
+            std::cerr << "Forking distributor child process failed" << std::endl;
             exit(160);
         }
     }
 
+    DEBUG_FILE("Launched child processes to verify data files distribution.", "debug.log");
+
+    // Wait for all child processes to finish writing verified data files to temporary files
+    this->awaitDistributorProcesses(childToParentPipes, parentToChildPipes);
+
+    // Wait for all child processes to finish
+    for (int i = 0; i < this->numClients; i++)
+    {
+        int status;
+        waitpid(childPIDs[i], &status, 0);
+    }
+
     DEBUG_FILE("Finished distributing and processing data files.", "debug.log");
+
+    // Children have finsihed distributing (based on the first signal) and now
+    // they have finished processing the data files. We can retrieve the code blocks sent by the children.
+    std::vector<std::string> combinedResults = this->collectProcessedDataResults(childToParentPipes);
+
+    // Concatenate the combined results from all clients
+    return std::accumulate(combinedResults.begin(), combinedResults.end(), std::string());
 }
 
 /**
@@ -252,6 +233,95 @@ void Server::runDistributorChildProcess(int i, int writePipeFd, int readPipeFd, 
     // Exit if execvp fails
     perror("execvp failed");
     exit(120);
+}
+
+/**
+ * @brief Awaits the distributor child processes to finish verifying the data files.
+ *
+ * This function waits for all child processes to finish verifying the data files
+ * (where they write the correct client index and file index to a temporary file)
+ * and signals them to proceed with the distribution verification and processing of
+ * the data files.
+ *
+ * @param childToParentPipes A vector of file descriptors for the read end of the pipes.
+ * @param parentToChildPipes A vector of file descriptors for the write end of the pipes.
+ */
+void Server::awaitDistributorProcesses(std::vector<int> &childToParentPipes, std::vector<int> &parentToChildPipes)
+{
+    // Keep track of the number of clients that have been verified to know when
+    // all clients have been processed
+    int clientsVerified = 0;
+
+    // Waits for child signals
+    while (clientsVerified < this->numClients)
+    {
+        for (int i = 0; i < this->numClients; ++i)
+        {
+            if (childToParentPipes[i] != -1)
+            {
+                int clientIdx;
+                ssize_t bytesRead = read(childToParentPipes[i], &clientIdx, sizeof(clientIdx));
+                if (bytesRead > 0)
+                {
+                    ++clientsVerified;
+                }
+            }
+        }
+    }
+
+    DEBUG_FILE("Verified data files distribution for all clients.", "debug.log");
+
+    // Notify all children to proceed
+    for (int i = 0; i < this->numClients; i++)
+    {
+        int signal = 1;
+        write(parentToChildPipes[i], &signal, sizeof(signal));
+        close(parentToChildPipes[i]); // Close write end after signaling
+    }
+}
+
+/**
+ * @brief Collects the combined results from the completed child processes.
+ *
+ * This function reads the combined blocks of code sent over pipes from the distributor
+ * child processes and stores them in a vector of strings. The results are read from the
+ * child-to-parent pipes.
+ *
+ * @param childToParentPipes A vector of file descriptors for the read end of the pipes.
+ * @return std::vector<std::string> A vector of strings containing the combined results from the child processes.
+ */
+std::vector<std::string> Server::collectProcessedDataResults(std::vector<int>& childToParentPipes)
+{
+    std::vector<std::string> combinedResults(this->numClients);
+
+    for (int i = 0; i < this->numClients; i++)
+    {
+        if (childToParentPipes[i] != -1)
+        {
+            size_t resultSize;
+            ssize_t bytesRead = read(childToParentPipes[i], &resultSize, sizeof(resultSize));
+            if (bytesRead != sizeof(resultSize))
+            {
+                DEBUG_FILE("Failed to read result size from client " + std::to_string(i), "debug.log");
+                continue;
+            }
+
+            std::string result(resultSize, '\0');
+            bytesRead = read(childToParentPipes[i], result.data(), resultSize);
+            if (bytesRead != static_cast<ssize_t>(resultSize))
+            {
+                DEBUG_FILE("Incomplete read from client " + std::to_string(i), "debug.log");
+                continue;
+            }
+
+            combinedResults[i] = result;
+            DEBUG_FILE("Received combined result from client " + std::to_string(i) + ": " + result, "debug.log");
+            close(childToParentPipes[i]);
+            childToParentPipes[i] = -1;
+        }
+    }
+
+    return combinedResults;
 }
 
 /**

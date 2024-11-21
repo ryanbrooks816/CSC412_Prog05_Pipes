@@ -248,10 +248,12 @@ void Client::readDistributorTempFiles(int numClients)
  * - The number of verified files.
  * - The list of verified files.
  *
- * Invariant: Tmporary files have been created and processed into the client's verified
+ * Invariants:
+ * 
+ * Tmporary files have been created and processed into the client's verified
  * files list by the runDistributorChildProcess function.
  *
- * Invaiant: The tmp folder exists, which we know it does because the distributor
+ * The tmp folder exists, which we know it does because the distributor
  * process creates it before running the child processes.
  *
  * @return A string containing the combined results from processing each client's
@@ -274,26 +276,14 @@ void Client::initializeProcessor()
         int status;
         wait(&status);
         DEBUG_FILE("Processed data files for client " + std::to_string(this->clientIdx), "debug.log");
-
-        // Read the temporary file created by the child process and create the combined code block
-        std::string combinedResult = this->readDataProcessingTempFile();
-
-        // Send this back to the parent process. Pipes.
-        // Will probably need to create pipes in the distribor file
-        // Then write to the pipe here
-        // But how can the server then know about what happend in the distribor file
-        // Would I instead of have to create more pies in the server file and then pass
-        // even more pipes to the distribor? Idk. 
-        // Somehow the server needs to know about the pipes the distribor has
-        // so I either need to create all the of the pipes for both what's crrently
-        // used by the distribot and these new pipes between the distribot and process
-        // or just make 2 levels of pipes.
     }
     else
     {
         perror("fork failed");
         exit(161);
     }
+
+    DEBUG_FILE("Finished processing data files for client " + std::to_string(this->clientIdx), "debug.log");
 }
 
 /**
@@ -304,7 +294,6 @@ void Client::initializeProcessor()
  * process, sorts the lines based on their line numbers, and combines them into
  * a single block of code. The results are written to a temporary file to be read
  * by distributor (parent) process and eventually processed by the server.
- *
  */
 void Client::runProcessorChildProcess()
 {

@@ -151,10 +151,12 @@ public:
      * - The number of verified files.
      * - The list of verified files.
      *
-     * Invariant: Tmporary files have been created and processed into the client's verified
+     * Invariants:
+     *
+     * Tmporary files have been created and processed into the client's verified
      * files list by the runDistributorChildProcess function.
      *
-     * Invaiant: The tmp folder exists, which we know it does because the distributor
+     * The tmp folder exists, which we know it does because the distributor
      * process creates it before running the child processes.
      *
      * @return A string containing the combined results from processing each client's
@@ -163,18 +165,6 @@ public:
      * @throws std::runtime_error if the fork fails or execvp fails.
      */
     void initializeProcessor();
-
-    /**
-     * @brief Runs the processor child process to sort and combine the data files.
-     *
-     * This function is called by the child process to run the processor program.
-     * The processor program reads the temporary files created by the distributor
-     * process, sorts the lines based on their line numbers, and combines them into
-     * a single block of code. The results are written to a temporary file to be read
-     * by distributor (parent) process and eventually processed by the server.
-     *
-     */
-    void runProcessorChildProcess();
 
     /**
      * @brief Reads temporary file created by child processe during the data processing
@@ -190,47 +180,7 @@ public:
      *
      * @throws std::runtime_error if a temporary file cannot be opened.
      */
-    std::string Client::readDataProcessingTempFile();
-
-    /**
-     * @brief Retrieves the process index from the first line of a given file.
-     *
-     * Opens the specified file and reads the first line to extract
-     * an integer value representing the process index. If the file cannot be opened
-     * or the first line does not contain a valid integer, the function returns -1.
-     *
-     * @param filename The path to the file containing the process index.
-     * @return The process index read from the file, or -1 if an error occurs.
-     */
-    int getDataFileProcessIdx(const std::string &filename);
-
-    /**
-     * @struct LineData
-     * @brief Represents a line of code with associated metadata.
-     *
-     * Holds information about a specific line of code from a data file,
-     * including the index of the process, the line number, and the actual
-     * code content.
-     */
-    struct LineData
-    {
-        int processIdx;
-        int lineNum;
-        std::string code;
-    };
-
-    /**
-     * @brief Reads the contents of a file and extracts specific data.
-     *
-     * This function opens a file specified by the given filename, reads the first line,
-     * and extracts the process index, line number, and code from the line. The extracted
-     * values are stored in a LineData structure and returned.
-     *
-     * @param filename The name of the file to read.
-     * @return A LineData structure containing the extracted values. If the file cannot be
-     *         opened, an empty LineData structure is returned.
-     */
-    LineData getDataFileContents(const std::string &filename);
+    std::string readDataProcessingTempFile();
 
     /**
      * @brief Processes data files associated with the client and writes the results to a
@@ -271,6 +221,58 @@ private:
      * A vector of strings containing the file paths verified to belong to the client.
      */
     std::vector<std::string> verifiedFiles;
+
+    /**
+     * @brief Runs the processor child process to sort and combine the data files.
+     *
+     * This function is called by the child process to run the processor program.
+     * The processor program reads the temporary files created by the distributor
+     * process, sorts the lines based on their line numbers, and combines them into
+     * a single block of code. The results are written to a temporary file to be read
+     * by distributor (parent) process and eventually processed by the server.
+     *
+     */
+    void runProcessorChildProcess();
+
+    /**
+     * @brief Retrieves the process index from the first line of a given file.
+     *
+     * Opens the specified file and reads the first line to extract
+     * an integer value representing the process index. If the file cannot be opened
+     * or the first line does not contain a valid integer, the function returns -1.
+     *
+     * @param filename The path to the file containing the process index.
+     * @return The process index read from the file, or -1 if an error occurs.
+     */
+    int getDataFileProcessIdx(const std::string &filename);
+
+    /**
+     * @struct LineData
+     * @brief Represents a line of code with associated metadata.
+     *
+     * Holds information about a specific line of code from a data file,
+     * including the index of the process, the line number, and the actual
+     * code content.
+     */
+    struct LineData
+    {
+        int processIdx;
+        int lineNum;
+        std::string code;
+    };
+
+    /**
+     * @brief Reads the contents of a file and extracts specific data.
+     *
+     * This function opens a file specified by the given filename, reads the first line,
+     * and extracts the process index, line number, and code from the line. The extracted
+     * values are stored in a LineData structure and returned.
+     *
+     * @param filename The name of the file to read.
+     * @return A LineData structure containing the extracted values. If the file cannot be
+     *         opened, an empty LineData structure is returned.
+     */
+    LineData getDataFileContents(const std::string &filename);
 };
 
 #endif // CLIENT_H

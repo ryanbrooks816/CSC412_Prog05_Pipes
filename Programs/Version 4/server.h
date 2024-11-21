@@ -66,7 +66,22 @@ public:
      *
      * @param files A vector of strings representing the data files to be verified.
      */
-    void initializeDistributor(const std::vector<std::string> &files);
+    std::string initializeDistributor(const std::vector<std::string> &files);
+
+    /**
+     * @brief Writes the given content to the specified output file.
+     *
+     * This function attempts to open the specified output file and write the provided
+     * content to it. If the file cannot be opened, an error message is printed to std::cerr.
+     *
+     * @param outputFile The path to the output file where the content will be written.
+     * @param content The content to be written to the output file.
+     */
+    void writeOutputFile(const std::string &outputFile, const std::string &content);
+
+private:
+    std::vector<Client> clients;
+    int numClients;
 
     /**
      * @brief Runs the distributor child process for a specific client.
@@ -83,19 +98,29 @@ public:
     void runDistributorChildProcess(int i, int writePipeFd, int readPipeFd, const std::vector<std::string> &files);
 
     /**
-     * @brief Writes the given content to the specified output file.
+     * @brief Awaits the distributor child processes to finish verifying the data files.
      *
-     * This function attempts to open the specified output file and write the provided
-     * content to it. If the file cannot be opened, an error message is printed to std::cerr.
+     * This function waits for all child processes to finish verifying the data files
+     * (where they write the correct client index and file index to a temporary file)
+     * and signals them to proceed with the distribution verification and processing of
+     * the data files.
      *
-     * @param outputFile The path to the output file where the content will be written.
-     * @param content The content to be written to the output file.
+     * @param childToParentPipes A vector of file descriptors for the read end of the pipes.
+     * @param parentToChildPipes A vector of file descriptors for the write end of the pipes.
      */
-    void writeOutputFile(const std::string &outputFile, const std::string &content);
+    void awaitDistributorProcesses(std::vector<int> &childToParentPipes, std::vector<int> &parentToChildPipes);
 
-private:
-    std::vector<Client> clients;
-    int numClients;
+    /**
+     * @brief Collects the combined results from the completed child processes.
+     *
+     * This function reads the combined blocks of code sent over pipes from the distributor
+     * child processes and stores them in a vector of strings. The results are read from the
+     * child-to-parent pipes.
+     *
+     * @param childToParentPipes A vector of file descriptors for the read end of the pipes.
+     * @return std::vector<std::string> A vector of strings containing the combined results from the child processes.
+     */
+    std::vector<std::string> collectProcessedDataResults(std::vector<int> &childToParentPipes);
 };
 
 #endif // SERVER_H
