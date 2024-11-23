@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['distributedatafiles_68',['distributeDataFiles',['../class_server.html#af485988fceb1984030efd7a79c5af3a6',1,'Server::distributeDataFiles(std::string dataFolder)'],['../class_server.html#ab30a04a55b25770ccbce21700afbb5f9',1,'Server::distributeDataFiles(const std::vector&lt; std::string &gt; &amp;files)'],['../class_server.html#ab30a04a55b25770ccbce21700afbb5f9',1,'Server::distributeDataFiles(const std::vector&lt; std::string &gt; &amp;files)'],['../class_server.html#ab30a04a55b25770ccbce21700afbb5f9',1,'Server::distributeDataFiles(const std::vector&lt; std::string &gt; &amp;files)'],['../class_server.html#ab30a04a55b25770ccbce21700afbb5f9',1,'Server::distributeDataFiles(const std::vector&lt; std::string &gt; &amp;files)'],['../class_server.html#ab30a04a55b25770ccbce21700afbb5f9',1,'Server::distributeDataFiles(const std::vector&lt; std::string &gt; &amp;files)']]]
+];
